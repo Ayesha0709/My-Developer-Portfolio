@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayesha Khan | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-ring"></div>
+      <div class="loader-text">AK.dev</div>
+    </div>
+  </div>
+  
+
+
+  <div id="scroll-progress"></div>
+  <div id="mesh-bg"></div>
+
+  <div class="particle" style="top:12%;left:8%;"></div>
+  <div class="particle" style="top:70%;left:88%;"></div>
+  <div class="particle" style="top:40%;left:3%;"></div>
+  <div class="particle" style="top:88%;left:18%;"></div>
+  <div class="particle" style="top:25%;left:92%;"></div>
+  <div class="particle" style="top:55%;left:50%;"></div>
+  <div class="particle" style="top:80%;left:30%;"></div>
+  <div class="particle" style="top:15%;left:70%;"></div>
+  <div class="particle" style="top:60%;left:10%;"></div>
+
+  <div class="particle" style="top:12%;right:8%;"></div>
+  <div class="particle" style="top:70%;right:88%;"></div>
+  <div class="particle" style="top:40%;right:3%;"></div>
+  <div class="particle" style="top:88%;right:18%;"></div>
+  <div class="particle" style="top:25%;right:92%;"></div>
+  <div class="particle" style="top:55%;right:50%;"></div>
+  <div class="particle" style="top:80%;right:30%;"></div>
+  <div class="particle" style="top:15%;right:70%;"></div>
+  <div class="particle" style="top:60%;right:10%;"></div>
+
+
+  <div id="cursor-dot"></div>
+  <div id="cursor-glow"></div>
+  <nav>
+    <div class="logo">AK.dev</div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+       <a href="#projects">Projects</a>
+       <a href="#internship"> Internship</a>
+       <a href="#experience">Experience</a>
+       <a href ="#education">Education</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+      <label class="theme-switch" for="theme-toggle"><input type="checkbox" id="theme-toggle">
+        <div class="slider">
+          <div class="circle"></div>
+      </label>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" onclick="closeMobile()">Home</a>
+    <a href="#about" onclick="closeMobile()">About</a>
+    <a href="#skills" onclick="closeMobile()">Skills</a>
+     <a href="#projects" onclick="closeMobile()">Projects</a>
+     <a href="#internship" onclick="closeMobile()">Internship</a>
+    <a href="#experience" onclick="closeMobile()">Experience</a>
+    <a href="#education" onclick="closeMobile()">Education</a>
+    <a href="#certifications" onclick="closeMobile()">Certifications</a>
+    <a href="#contact" onclick="closeMobile()">Contact</a>
+  </div>
+
+  <div class="container">
+    <section class="hero" id="home">
+      <span class="reveal" style="color: var(--accent); letter-spacing: 2px;"> ✦ <span id="typewriter">FRESHER BCA
+          STUDENT</span></span>
+      <h1 class="reveal">Ayesha<br><span class="gradient-text">Khan</span></h1>
+      <p class="reveal" style="max-width: 600px; margin-bottom: 30px;" class="hero-float">Crafting
+        clean, beautiful digital experiences with Python and modern web technologies.</p>
+      <div class="reveal"><button class="btn btn-primary"
+          onclick="sparkleBurst(event);document.getElementById('projects').scrollIntoView({behavior:'smooth'})">View
+          Projects ↓ </button></div>
+    </section>
+
+    <div class="skill-train-container reveal">
+      <div class="skill-train"><span>✦ Python</span><span>✦ UI/UX
+          Design</span><span>✦ HTML5</span><span>✦ CSS3</span><span>✦ JavaScript</span><span>✦ Figma</span><span>✦
+          React</span><span>✦ SQL</span><span>✦ Framer
+          Motion</span><span>✦ Python</span><span>✦ UI/UX
+          Design</span><span>✦ HTML5</span><span>✦ CSS3</span><span>✦ JavaScript</span><span>✦ Figma</span><span>✦
+          React</span><span>✦ SQL</span><span>✦ Framer
+          Motion</span></div>
+    </div>
+    <section id="about">
+      <div
+        style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; min-height: 80vh; padding: 0 10%;">
+        <div class="reveal">
+          <h2 class="serif" style="font-size: 3.5rem; margin-bottom: 20px;">Building the <span
+              style="color: var(--accent);">future</span>.</h2>
+          <p style="max-width: 450px; line-height: 1.6;">BCA student with a keen eye for aesthetics.
+            I believe every line of code should contribute to an intuitive, seamless, and meaningful user experience.
+            Passionate about blending creativity with technology, I enjoy building digital experiences that are both
+            functional and engaging.
+          </p>
+        </div>
+
+        <div class="reveal" style="display: flex; flex-wrap: wrap; gap: 20px;">
+          <div class="card"
+            style="flex: 1; min-width: 120px; text-align: center; border-left: 4px solid var(--accent);">
+            <div class="serif" style="font-size: 2.5rem; color: var(--accent);">10+</div>
+            <div style="font-size: 0.7rem; color: var(--muted);">Projects Built</div>
+          </div>
+          <div class="card"
+            style="flex: 1; min-width: 120px; text-align: center; border-left: 4px solid var(--accent);">
+            <div class="serif" style="font-size: 2.5rem; color: var(--accent);">9+</div>
+            <div style="font-size: 0.7rem; color: var(--muted);">Certifications</div>
+          </div>
+          <div class="card"
+            style="flex: 1; min-width: 120px; text-align: center; border-left: 4px solid var(--accent);">
+            <div class="serif" style="font-size: 2.5rem; color: var(--accent);">2+</div>
+            <div style="font-size: 0.7rem; color: var(--muted);">Years Coding</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="skills">
+      <h2 class="serif reveal" style="font-size: 2.5rem; margin-bottom: 40px;">Technical <span
+          class="gradient-text">Toolkit</span></h2>
+      <div id="skill-list" style="display: flex; flex-wrap: wrap; gap: 15px;">
+        <div class="card reveal tilt-active card-stagger" style="flex: 1; min-width: 180px;">
+          <div style="margin-bottom: 15px; font-size: 0.7rem; color: var(--accent); text-transform: uppercase;">Frontend
+          </div><span class="pill">HTML5</span><span class="pill">CSS3</span><span class="pill">JavaScript</span><span
+            class="pill">React</span><span class="pill">Figma</span>
+        </div>
+        <div class="card reveal tilt-active card-stagger" style="flex: 1; min-width: 180px;">
+          <div style="margin-bottom: 15px; font-size: 0.7rem; color: var(--accent); text-transform: uppercase;">Backend
+          </div><span class="pill">Python</span><span class="pill">SQL</span><span class="pill">APIs</span>
+        </div>
+        <div class="card reveal tilt-active card-stagger" style="flex: 1; min-width: 180px;">
+          <div style="margin-bottom: 15px; font-size: 0.7rem; color: var(--accent); text-transform: uppercase;">Tools
+          </div><span class="pill">Git</span><span class="pill">VS Code</span><span class="pill">Framer</span><span
+            class="pill">Notion</span>
+        </div>
+      </div>
+    </section>
+    
+    <section id="projects" style="max-width:1200px; margin:0 auto; padding:110px 60px;">
+      <div class="section-label reveal">Selected Work</div>
+      <h2 class="section-title serif reveal">Projects that<br> <span class="gradient-text">solve real problems.</span>
+      </h2>
+      <div class="projects-grid">
+
+        <div class="project-card featured reveal tilt-active" onclick="openModal('p1')">
+          <div class="project-img" style="background:linear-gradient(135deg ,#700404,#ebc0c0);">
+            <img src="assets/mockup.png" alt="Portfolio Mockup">
+            <div class="project-tag featured-tag">
+              ★ Featured Case Study
+            </div>
+          </div>
+
+          <div class="project-body">
+            <div class="project-title-row">
+
+              <div class="project-title">
+                Personal Portfolio - Ayesha Khan
+              </div>
+
+              <div class="project-actions">
+
+                <a href="YOUR_GITHUB_LINK" class="project-inline-github" target="_blank"
+                  onclick="event.stopPropagation();">
+
+                  <i class="fab fa-github"></i>
+
+                </a>
+
+                <a href="https://6pl857kz-5501.inc1.devtunnels.ms/" class="project-inline-arrow" target="_blank"
+                  onclick="event.stopPropagation();">
+
+                  <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+              </div>
+
+            </div>
+            <p class="project-desc">Designed and developed from scratch to showcase technical skills through immersive
+              interactions and thoughtful user experiences.</p>
+            <div class="project-pills"><span class="pill">HTML5</span><span class="pill">CSS3</span><span
+                class="pill">JavaScript</span><span class="pill">UI/UX</span></div>
+            <div class="project-metrics">
+              <div class="metric">
+                <div class="metric-val">100%</div>
+                <div class="metric-label">Custom Built</div>
+              </div>
+
+              <div class="metric">
+                <div class="metric-val">2</div>
+                <div class="metric-label">Theme Modes</div>
+              </div>
+
+              <div class="metric">
+                <div class="metric-val">Responsive</div>
+                <div class="metric-label">All Devices</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="project-card reveal reveal-delay-1 tilt-active" onclick="openModal('p2')">
+          <div class="project-img" style="background:linear-gradient(135deg,#0742c0,#be386b);">
+            <div class="project-img-inner"></div>
+            <div class="project-tag">Python + Data</div>
+          </div>
+
+          <div class="project-body">
+            <div class="project-title-row">
+
+              <div class="project-title">
+                Data Analytics Dashboard
+              </div>
+
+              <div class="project-actions">
+
+                <a href="YOUR_GITHUB_LINK" class="project-inline-github" target="_blank"
+                  onclick="event.stopPropagation();">
+
+                  <i class="fab fa-github"></i>
+
+                </a>
+
+                <a href="YOUR_LIVE_LINK" class="project-inline-arrow" target="_blank"
+                  onclick="event.stopPropagation();">
+
+                  <i class="fas fa-arrow-right"></i>
+
+                </a>
+              </div>
+            </div>
+
+            <p class="project-desc">Python-powered analytics dashboard.</p>
+            <div class="project-pills"><span class="pill">Python</span><span class="pill">SQL</span><span
+                class="pill">Data Viz</span></div>
+            <div class="project-metrics">
+              <div class="metric">
+                <div class="metric-val">~60%</div>
+                <div class="metric-label">Time Saved</div>
+              </div>
+              <div class="metric">
+                <div class="metric-val">Auto</div>
+                <div class="metric-label">Report Gen</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="project-card reveal reveal-delay-2 tilt-active" onclick="openModal('p3')">
+          <div class="project-img" style="background:linear-gradient(135deg,#960cd6,#6f43d8);">
+            <div class="project-img-inner"></div>
+            <div class="project-tag">UI/UX Design</div>
+          </div>
+
+          <div class="project-body">
+
+            <div class="project-title-row">
+
+              <div class="project-title">
+                Mobile App UI
+              </div>
+
+              <div class="project-actions">
+
+                <a href="YOUR_GITHUB_LINK" class="project-inline-github" target="_blank"
+                  onclick="event.stopPropagation();">
+
+                  <i class="fab fa-github"></i>
+
+                </a>
+
+                <a href="YOUR_LIVE_LINK" class="project-inline-arrow" target="_blank"
+                  onclick="event.stopPropagation();">
+
+                  <i class="fas fa-arrow-right"></i>
+
+                </a>
+              </div>
+            </div>
+
+
+
+            <p class="project-desc">End-to-end mobile productivity app design.</p>
+            <div class="project-pills"><span class="pill">Figma</span><span class="pill">Prototyping</span><span
+                class="pill">UX Research</span></div>
+            <div class="project-metrics">
+              <div class="metric">
+                <div class="metric-val">40+</div>
+                <div class="metric-label">Screens</div>
+              </div>
+              <div class="metric">
+                <div class="metric-val">Full</div>
+                <div class="metric-label">Prototype</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+   
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+      <div class="modal" id="modalBox">
+        <div id="modalContent"></div>
+      </div>
+    </div>
+
+    <section id="internship" style="padding: 80px 60px; max-width: 1200px; margin: 0 auto;">
+  <div class="section-label reveal">Professional Growth</div>
+  <h2 class="section-title serif reveal">Internship<br> <span class="gradient-text">Experience.</span></h2>
+  
+  <div class="experience-slider reveal">
+    <!-- Card 01 -->
+    <div class="experience-card">
+      <div class="experience-image">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800" alt="Web Development">
+      </div>
+      <div class="experience-overlay"></div>
+      
+      <div class="side-title">Web Development</div>
+      <div class="intern-icon"><i class="fas fa-plus"></i></div>
+      
+      <div class="intern-title-group">
+        <div class="exp-subtitle">Virtual Experience</div>
+        <h3>Web Development</h3>
+        <p>2026 - 2027</p>
+      </div>
+      
+      <div class="experience-content">
+        <p>Collaborated with design leads to deliver pixel-accurate user interfaces. Translated wireframes into fully responsive web pages.</p>
+        <div class="acc-panel-pills">
+          <span class="ap-pill">HTML5</span><span class="ap-pill">CSS3</span><span class="ap-pill">Figma</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 02 -->
+    <div class="experience-card">
+      <div class="experience-image">
+        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800" alt="Software Engineering">
+      </div>
+      <div class="experience-overlay"></div>
+     
+      <div class="side-title">Software Engineering</div>
+      <div class="intern-icon"><i class="fas fa-plus"></i></div>
+      
+      <div class="intern-title-group">
+        <div class="exp-subtitle">JPMorgan Chase</div>
+        <h3>Software Engineering</h3>
+        <p>Simulated Workflow</p>
+      </div>
+      
+      <div class="experience-content">
+        <p>Gained hands-on experience with agile development and real-world workflows in a professional banking environment.</p>
+        <div class="acc-panel-pills">
+          <span class="ap-pill">Agile</span><span class="ap-pill">Git</span><span class="ap-pill">SDLC</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 03 -->
+    <div class="experience-card">
+      <div class="experience-image">
+        <img src="assets/data-analytics.jpg" alt="Data Analytics">
+      </div>
+      <div class="experience-overlay"></div>
+      
+      <div class="side-title">Data Analytics</div>
+      <div class="intern-icon"><i class="fas fa-plus"></i></div>
+      
+      <div class="intern-title-group">
+        <div class="exp-subtitle">Google (Forage)</div>
+        <h3>Data Analytics</h3>
+        <p>Professional Certificate</p>
+      </div>
+      
+      <div class="experience-content">
+        <p>Applied data-driven decision making to real business scenarios using SQL and Tableau for data extraction and visualization.</p>
+        <div class="acc-panel-pills">
+          <span class="ap-pill">SQL</span><span class="ap-pill">Tableau</span><span class="ap-pill">Python</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  
+      
+
+
+
+    <!--EXPERIENCE SECTION-->
+    <section id="experience" style="padding: 110px 60px; max-width: 1200px; margin: 0 auto;">
+      <div class="section-label reveal">Experience</div>
+      <h2 class="section-title serif reveal">Where I've built<br> <span class="gradient-text">real things. </span></h2>
+      <div class="accordion" id="exp-accordion">
+        <div class="accordion-panel reveal">
+          <div class="acc-collapsed">
+            <div class="acc-logo-frame"><i class="fas fa-graduation-cap"
+                style="font-size:1.4rem;color:var(--accent);"></i></div>
+          </div>
+          <div class="acc-expanded">
+            <div class="acc-expand-img"
+              style="background: url(https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=900&h=700&fit=crop&auto=format) center/cover no-repeat;">
+            </div>
+            <div class="acc-expand-info">
+              <div class="acc-info-header">
+                <span class="acc-panel-tag">Education</span>
+                <span class="acc-panel-date">2026 - Present</span>
+              </div>
+              <div class="acc-panel-title">BCA Student</div>
+              <div class="acc-panel-sub">Lucknow Graduate</div>
+              <p class="acc-panel-desc">Studying core Computer Science subjects while building real-world software. Deep
+                focus on data structures, algorithms, and software engineering principles.</p>
+              <ul class="acc-panel-details">
+                <li>Data Structures, DBMS, OS, Networking</li>
+                <li>9+ industry certifications earned alongside coursework</li>
+                <li>Applied theory to real code through projects</li>
+              </ul>
+              <div class="acc-panel-pills"><span class="ap-pill">Python</span><span class="ap-pill">SQL</span><span
+                  class="ap-pill">Data Structures</span><span class="ap-pill">Algorithms</span><span
+                  class="ap-pill">DBMS</span><span class="ap-pill">OS</span></div>
+              <div class="acc-panel-metrics">
+                <div>
+                  <div class="ap-metric-val">Full-time</div>
+                  <div class="ap-metric-label">Enrollment</div>
+                </div>
+                <div>
+                  <div class="ap-metric-val">9+</div>
+                  <div class="ap-metric-label">Certifications</div>
+                </div>
+                <div>
+                  <div class="ap-metric-val">10+</div>
+                  <div class="ap-metric-label">Projects Built</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="accordion-panel reveal-delay-1">
+          <div class="acc-collapsed">
+            <div class="acc-logo-frame"><i class="fas fa-code" style="font-size:1.4rem;color:var(--accent);"></i></div>
+          </div>
+          <div class="acc-expanded">
+            <div class="acc-expand-img"
+              style="background: url(https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&h=700&fit=crop&auto=format) center/cover no-repeat;">
+            </div>
+            <div class="acc-expand-info">
+              <div class="acc-info-header">
+                <span class="acc-panel-tag">Intern</span>
+                <span class="acc-panel-date">2026 - 2027</span>
+              </div>
+              <div class="acc-panel-title">Web Development</div>
+              <div class="acc-panel-sub">Internship Experience</div>
+              <p class="acc-panel-desc">Collaborated with design leads to deliver pixel-accurate user interfaces.
+                Translated wireframes into fully responsive web pages and contributed to backend automation scripts.</p>
+              <ul class="acc-panel-details">
+                <li>Figma to HTML/CSS/JS conversion with precision</li>
+                <li>Python backend scripts for data processing</li>
+                <li>Agile code reviews and sprint planning</li>
+              </ul>
+              <div class="acc-panel-pills"><span class="ap-pill">HTML5</span><span class="ap-pill">CSS3</span><span
+                  class="ap-pill">JavaScript</span><span class="ap-pill">Python</span><span
+                  class="ap-pill">Figma</span><span class="ap-pill">Git</span></div>
+              <div class="acc-panel-metrics">
+                <div>
+                  <div class="ap-metric-val">Pixel-Accurate</div>
+                  <div class="ap-metric-label">UI Delivery</div>
+                </div>
+                <div>
+                  <div class="ap-metric-val">Figma</div>
+                  <div class="ap-metric-label">Design Handoff</div>
+                </div>
+                <div>
+                  <div class="ap-metric-val">Agile</div>
+                  <div class="ap-metric-label">Methodology</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="accordion-panel reveal-delay-2">
+          <div class="acc-collapsed">
+            <div class="acc-logo-frame"><i class="fas fa-briefcase" style="font-size:1.4rem;color:var(--accent);"></i>
+            </div>
+          </div>
+          <div class="acc-expanded">
+            <div class="acc-expand-img"
+              style="background: url(https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=900&h=700&fit=crop&auto=format) center/cover no-repeat;">
+            </div>
+            <div class="acc-expand-info">
+              <div class="acc-info-header">
+                <span class="acc-panel-tag">Freelance</span>
+                <span class="acc-panel-date">2026 - 2027</span>
+              </div>
+              <div class="acc-panel-title">Freelance Developer</div>
+              <div class="acc-panel-sub">Independent Work</div>
+              <p class="acc-panel-desc">Built custom websites from scratch for small businesses and startups. Handled
+                everything from initial consultation through design, development, deployment, and maintenance.</p>
+              <ul class="acc-panel-details">
+                <li>End-to-end delivery including design, dev, and deployment</li>
+                <li>Client communication, timelines, and requirements gathering</li>
+                <li>SEO optimization, performance tuning, and responsiveness</li>
+              </ul>
+              <div class="acc-panel-pills"><span class="ap-pill">HTML5</span><span class="ap-pill">CSS3</span><span
+                  class="ap-pill">JavaScript</span><span class="ap-pill">SEO</span><span
+                  class="ap-pill">Responsive</span><span class="ap-pill">Deployment</span></div>
+              <div class="acc-panel-metrics">
+                <div>
+                  <div class="ap-metric-val">End-to-End</div>
+                  <div class="ap-metric-label">Delivery</div>
+                </div>
+                <div>
+                  <div class="ap-metric-val">Custom</div>
+                  <div class="ap-metric-label">Sites Built</div>
+                </div>
+                <div>
+                  <div class="ap-metric-val">Client</div>
+                  <div class="ap-metric-label">Communication</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="accordion-panel reveal-delay-1">
+          <div class="acc-collapsed">
+            <div class="acc-logo-frame"><i class="fas fa-bolt" style="font-size:1.4rem;color:var(--accent);"></i></div>
+          </div>
+          <div class="acc-expanded">
+            <div class="acc-expand-img"
+              style="background: url(https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=900&h=700&fit=crop&auto=format) center/cover no-repeat;">
+            </div>
+            <div class="acc-expand-info">
+              <div class="acc-info-header">
+                <span class="acc-panel-tag">Full Stack</span>
+                <span class="acc-panel-date">2026 - Present</span>
+              </div>
+              <div class="acc-panel-title">Full Stack Projects</div>
+              <div class="acc-panel-sub">Personal Endeavors</div>
+              <p class="acc-panel-desc">Exploring modern design systems, full-stack architectures, and complex backend
+                integrations. Building projects that combine clean frontends with robust server-side logic.</p>
+              <ul class="acc-panel-details">
+                <li>React frontend with Python backend integration</li>
+                <li>Design system implementation from scratch</li>
+                <li>Continuous experimentation with new tools and patterns</li>
+              </ul>
+              <div class="acc-panel-pills"><span class="ap-pill">React</span><span class="ap-pill">Python</span><span
+                  class="ap-pill">SQL</span><span class="ap-pill">APIs</span><span class="ap-pill">Design
+                  Systems</span><span class="ap-pill">UI/UX</span></div>
+              <div class="acc-panel-metrics">
+                <div>
+                  <div class="ap-metric-val">React+Python</div>
+                  <div class="ap-metric-label">Full Stack</div>
+                </div>
+                <div>
+                  <div class="ap-metric-val">Custom</div>
+                  <div class="ap-metric-label">Design Systems</div>
+                </div>
+                <div>
+                  <div class="ap-metric-val">Active</div>
+                  <div class="ap-metric-label">Experimentation</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+     
+      <!-- 2. EDUCATION SECTION -->
+     <section id="education" style="padding: 110px 60px; max-width: 1200px; margin: 0 auto;">
+  <div class="section-label reveal">Academic Background</div>
+  <h2 class="section-title serif reveal">Learning the<br> <span class="gradient-text">Fundamentals.</span></h2>
+  
+  <div class="edu-cards reveal">
+    <!-- Education Card 1 -->
+    <div class="edu-card">
+      <div class="edu-card-img" style="background-image: url(https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=600&h=400&fit=crop&auto=format);"></div>
+      <div class="edu-card-body">
+        <span class="acc-panel-tag">Degree</span>
+        <h3>BCA Student</h3>
+        <p class="edu-sub">Lucknow Graduate | 2026 - Present</p>
+        <p>Studying core CS subjects while building real-world software. Deep focus on data structures, algorithms, and software engineering principles.</p>
+        <div class="acc-panel-pills">
+          <span class="ap-pill">Python</span><span class="ap-pill">SQL</span><span class="ap-pill">DSA</span><span class="ap-pill">DBMS</span>
+        </div>
+      </div>
+    </div>
+    <!-- Education Card 2 -->
+    <div class="edu-card">
+      <div class="edu-card-img" style="background-image: url(https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&h=400&fit=crop&auto=format);"></div>
+      <div class="edu-card-body">
+        <span class="acc-panel-tag">Certification</span>
+        <h3>Full Stack Development</h3>
+        <p class="edu-sub">Self-Paced Learning | 2025</p>
+        <p>Completed comprehensive full-stack web development program covering modern frontend and backend technologies.</p>
+        <div class="acc-panel-pills">
+          <span class="ap-pill">React</span><span class="ap-pill">Node.js</span><span class="ap-pill">MongoDB</span><span class="ap-pill">Express</span>
+        </div>
+      </div>
+    </div>
+    <!-- Education Card 3 -->
+    <div class="edu-card">
+      <div class="edu-card-img" style="background-image: url(https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=600&h=400&fit=crop&auto=format);"></div>
+      <div class="edu-card-body">
+        <span class="acc-panel-tag">Online Course</span>
+        <h3>UI/UX Design</h3>
+        <p class="edu-sub">Coursera | 2025</p>
+        <p>Learned user-centered design principles, wireframing, prototyping, and usability testing methodologies.</p>
+        <div class="acc-panel-pills">
+          <span class="ap-pill">Figma</span><span class="ap-pill">Prototyping</span><span class="ap-pill">Wireframing</span><span class="ap-pill">UX Research</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <!--CERTIFICATIONS-->      
+       <section id="certifications" style="padding: 110px 60px; max-width: 1200px; margin: 0 auto;">
+      <div class="section-label reveal">Credentials</div>
+      <h2 class="section-title serif reveal">Verified by<br> <span class="gradient-text">industry leaders.</span></h2>
+      <div class="accordion cert-accordion" id="cert-accordion">
+        <div class="accordion-panel reveal">
+          <div class="acc-collapsed">
+            <div class="acc-logo-frame"><i class="fas fa-building-columns" style="font-size:1.4rem;"></i></div>
+          </div>
+          <div class="acc-expanded">
+            <div class="acc-expand-img"
+              style="background: url(https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=900&h=700&fit=crop&auto=format) center/cover no-repeat;">
+            </div>
+            <div class="acc-expand-info">
+              <div class="acc-info-header">
+                <span class="acc-panel-tag">Simulation</span>
+                <span class="acc-panel-date">Forage 2026</span>
+              </div>
+              <div class="acc-panel-title">Software Engineering</div>
+              <div class="acc-panel-sub">JPMorgan Chase</div>
+              <p class="acc-panel-desc">Completed JPMorgan Chase's software engineering simulation on Forage. Gained
+                hands-on experience with agile development, code reviews, and real-world engineering workflows.</p>
+
+              <div class="acc-panel-pills"><span class="ap-pill">Agile</span><span class="ap-pill">Code
+                  Review</span><span class="ap-pill">Git</span><span class="ap-pill">SDLC</span></div>
+              <div class="acc-panel-metrics">
+                <div>
+                  <div class="ap-metric-val">Forage</div>
+                  <div class="ap-metric-label">Platform</div>
+                </div>
+                <div>
+                  <div class="ap-metric-val">Simulation</div>
+                  <div class="ap-metric-label">Type</div>
+                </div>
+                <div>
+                  <div class="ap-metric-val">2026</div>
+                  <div class="ap-metric-label">Completed</div>
+                </div>
+              </div>
+              <a href="https://www.theforage.com/completion-certificates/Sj7temL583QAYpHXD/E6McHJDKsQYh79moz_Sj7temL583QAYpHXD_69df96d2bd576af1d0fb04f0_1777537165569_completion_certificate.pdf"
+                target="_blank" class="acc-panel-verify">Verify </a>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-panel reveal-delay-1">
+          <div class="acc-collapsed">
+            <div class="acc-logo-frame"><img src="https://unpkg.com/simple-icons@v11/icons/microsoftazure.svg"
+                alt="Azure" style="filter:var(--logo-filter);width:28px;height:28px;"></div>
+          </div>
+          <div class="acc-expanded">
+            <div class="acc-expand-img"
+              style="background: url(https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=900&h=700&fit=crop&auto=format) center/cover no-repeat;">
+            </div>
+            <div class="acc-expand-info">
+              <div class="acc-info-header">
+                <span class="acc-panel-tag">Azure</span>
+                <span class="acc-panel-date">Microsoft 2026</span>
+              </div>
+              <div class="acc-panel-title">Azure Essentials</div>
+              <div class="acc-panel-sub">Microsoft</div>
+              <p class="acc-panel-desc">Microsoft Azure Essentials covering cloud computing fundamentals, core Azure
+                services, and deployment strategies for scalable solutions.</p>
+
+              <div class="acc-panel-pills"><span class="ap-pill">Azure</span><span class="ap-pill">Cloud</span><span
+                  class="ap-pill">Deployment</span><span class="ap-pill">Scalability</span></div>
+              <div class="acc-panel-metrics">
+                <div>
+                  <div class="ap-metric-val">Microsoft</div>
+                  <div class="ap-metric-label">Publisher</div>
+                </div>
+                <div>
+                  <div class="ap-metric-val">Cloud</div>
+                  <div class="ap-metric-label">Domain</div>
+                </div>
+                <div>
+                  <div class="ap-metric-val">2026</div>
+                  <div class="ap-metric-label">Completed</div>
+                </div>
+              </div>
+              <a href="https://www.linkedin.com/learning/certificates/5b02af90760b959554e81cc87cf7cfe7b48e48852483d861e6b2a15a5a520d40"
+                target="_blank" class="acc-panel-verify">Verify</a>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-panel reveal-delay-2">
+          <div class="acc-collapsed">
+            <div class="acc-logo-frame"><img src="https://unpkg.com/simple-icons@v11/icons/anthropic.svg"
+                alt="Anthropic" style="filter:var(--logo-filter);width:28px;height:28px;"></div>
+          </div>
+          <div class="acc-expanded">
+            <div class="acc-expand-img"
+              style="background: url(https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=900&h=700&fit=crop&auto=format) center/cover no-repeat;">
+            </div>
+            <div class="acc-expand-info">
+              <div class="acc-info-header">
+                <span class="acc-panel-tag">AI</span>
+                <span class="acc-panel-date">Anthropic 2026</span>
+              </div>
+              <div class="acc-panel-title">Claude Code in Action</div>
+              <div class="acc-panel-sub">Anthropic</div>
+              <p class="acc-panel-desc">Claude Code in Action by Anthropic covering AI-assisted development workflows,
+                prompt engineering, and integrating LLMs into the coding process.</p>
+
+              <div class="acc-panel-pills"><span class="ap-pill">AI</span><span class="ap-pill">Claude</span><span
+                  class="ap-pill">Prompt Engineering</span><span class="ap-pill">LLM</span></div>
+              <div class="acc-panel-metrics">
+                <div>
+                  <div class="ap-metric-val">Anthropic</div>
+                  <div class="ap-metric-label">Publisher</div>
+                </div>
+                <div>
+                  <div class="ap-metric-val">AI</div>
+                  <div class="ap-metric-label">Domain</div>
+                </div>
+                <div>
+                  <div class="ap-metric-val">2026</div>
+                  <div class="ap-metric-label">Completed</div>
+                </div>
+              </div>
+              <a href="https://verify.skilljar.com/c/3qzp89g7t2wx" target="_blank" class="acc-panel-verify">Verify
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-panel reveal-delay-3">
+          <div class="acc-collapsed">
+            <div class="acc-logo-frame"><img src="https://unpkg.com/simple-icons@v11/icons/cisco.svg" alt="Cisco"
+                style="filter:var(--logo-filter);width:28px;height:28px;"></div>
+          </div>
+          <div class="acc-expanded">
+            <div class="acc-expand-img"
+              style="background: url(https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=900&h=700&fit=crop&auto=format) center/cover no-repeat;">
+            </div>
+            <div class="acc-expand-info">
+              <div class="acc-info-header">
+                <span class="acc-panel-tag">Python</span>
+                <span class="acc-panel-date">Cisco 2026</span>
+              </div>
+              <div class="acc-panel-title">Python Essentials 1</div>
+              <div class="acc-panel-sub">Cisco</div>
+              <p class="acc-panel-desc">Python Essentials 1 by Cisco Networking Academy covering foundational
+                programming concepts, data types, control flow, and functions.</p>
+
+              <div class="acc-panel-pills"><span class="ap-pill">Python</span><span
+                  class="ap-pill">Variables</span><span class="ap-pill">Functions</span><span class="ap-pill">Control
+                  Flow</span></div>
+              <div class="acc-panel-metrics">
+                <div>
+                  <div class="ap-metric-val">Cisco</div>
+                  <div class="ap-metric-label">Publisher</div>
+                </div>
+                <div>
+                  <div class="ap-metric-val">Python</div>
+                  <div class="ap-metric-label">Language</div>
+                </div>
+                <div>
+                  <div class="ap-metric-val">2026</div>
+                  <div class="ap-metric-label">Completed</div>
+                </div>
+              </div>
+              <a href="https://www.netacad.com/profile?tab=badges" target="_blank" class="acc-panel-verify">Verify
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-panel reveal-delay-4">
+          <div class="acc-collapsed">
+            <div class="acc-logo-frame"><img src="https://unpkg.com/simple-icons@v11/icons/tata.svg" alt="Tata"
+                style="filter:var(--logo-filter);width:28px;height:28px;"></div>
+          </div>
+          <div class="acc-expanded">
+            <div class="acc-expand-img"
+              style="background: url(https://images.unsplash.com/photo-1556155092-490a1ba16284?w=900&h=700&fit=crop&auto=format) center/cover no-repeat;">
+            </div>
+            <div class="acc-expand-info">
+              <div class="acc-info-header">
+                <span class="acc-panel-tag">Analytics</span>
+                <span class="acc-panel-date">Tata 2026</span>
+              </div>
+              <div class="acc-panel-title">GenAI Data Analytics</div>
+              <div class="acc-panel-sub">TCS</div>
+              <p class="acc-panel-desc">GenAI Data Analytics simulation by Tata/TCS on Forage covering AI-powered data
+                insights, analytics pipelines, and generative AI applications.</p>
+
+              <div class="acc-panel-pills"><span class="ap-pill">GenAI</span><span class="ap-pill">Data
+                  Analytics</span><span class="ap-pill">Python</span><span class="ap-pill">Insights</span></div>
+              <div class="acc-panel-metrics">
+                <div>
+                  <div class="ap-metric-val">Tata/TCS</div>
+                  <div class="ap-metric-label">Publisher</div>
+                </div>
+                <div>
+                  <div class="ap-metric-val">AI Analytics</div>
+                  <div class="ap-metric-label">Domain</div>
+                </div>
+                <div>
+                  <div class="ap-metric-val">2026</div>
+                  <div class="ap-metric-label">Completed</div>
+                </div>
+              </div>
+              <a href="https://www.theforage.com/completion-certificates/ifobHAoMjQs9s6bKS/gMTdCXwDdLYoXZ3wG_ifobHAoMjQs9s6bKS_69df96d2bd576af1d0fb04f0_1776611918697_completion_certificate.pdf"
+                target="_blank" class="acc-panel-verify">Verify </a>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-panel reveal-delay-1">
+          <div class="acc-collapsed">
+            <div class="acc-logo-frame"><img src="https://unpkg.com/simple-icons@v11/icons/tata.svg" alt="Tata"
+                style="filter:var(--logo-filter);width:28px;height:28px;"></div>
+          </div>
+          <div class="acc-expanded">
+            <div class="acc-expand-img"
+              style="background: url(https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=900&h=700&fit=crop&auto=format) center/cover no-repeat;">
+            </div>
+            <div class="acc-expand-info">
+              <div class="acc-info-header">
+                <span class="acc-panel-tag">Security</span>
+                <span class="acc-panel-date">Tata 2026</span>
+              </div>
+              <div class="acc-panel-title">Cyber Security</div>
+              <div class="acc-panel-sub">Tata Group</div>
+              <p class="acc-panel-desc">Cyber Security simulation by Tata Group covering threat analysis, incident
+                response, security frameworks, and risk mitigation strategies.</p>
+
+              <div class="acc-panel-pills"><span class="ap-pill">Threat Analysis</span><span class="ap-pill">Incident
+                  Response</span><span class="ap-pill">Security</span><span class="ap-pill">Risk Mgmt</span></div>
+              <div class="acc-panel-metrics">
+                <div>
+                  <div class="ap-metric-val">Tata Group</div>
+                  <div class="ap-metric-label">Publisher</div>
+                </div>
+                <div>
+                  <div class="ap-metric-val">Security</div>
+                  <div class="ap-metric-label">Domain</div>
+                </div>
+                <div>
+                  <div class="ap-metric-val">2026</div>
+                  <div class="ap-metric-label">Completed</div>
+                </div>
+              </div>
+              <a href="https://www.theforage.com/completion-certificates/ifobHAoMjQs9s6bKS/gmf3ypEXBj2wvfQWC_ifobHAoMjQs9s6bKS_69df96d2bd576af1d0fb04f0_1776263919082_completion_certificate.pdf"
+                target="_blank" class="acc-panel-verify">Verify </a>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-panel reveal-delay-2">
+          <div class="acc-collapsed">
+            <div class="acc-logo-frame"><img src="https://unpkg.com/simple-icons@v11/icons/googlecloud.svg" alt="Google"
+                style="filter:var(--logo-filter);width:28px;height:28px;"></div>
+          </div>
+          <div class="acc-expanded">
+            <div class="acc-expand-img"
+              style="background: url(https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=900&h=700&fit=crop&auto=format) center/cover no-repeat;">
+            </div>
+            <div class="acc-expand-info">
+              <div class="acc-info-header">
+                <span class="acc-panel-tag">Cloud</span>
+                <span class="acc-panel-date">Simplilearn 2026</span>
+              </div>
+              <div class="acc-panel-title">GenAI Studio Intro</div>
+              <div class="acc-panel-sub">Google</div>
+              <p class="acc-panel-desc">Generative AI Studio Introduction by Simplilearn in partnership with Google
+                covering Gemini API, prompt design, and GenAI application building.</p>
+
+              <div class="acc-panel-pills"><span class="ap-pill">GenAI</span><span class="ap-pill">Gemini</span><span
+                  class="ap-pill">Google Cloud</span><span class="ap-pill">Prompts</span></div>
+              <div class="acc-panel-metrics">
+                <div>
+                  <div class="ap-metric-val">Simplilearn</div>
+                  <div class="ap-metric-label">Publisher</div>
+                </div>
+                <div>
+                  <div class="ap-metric-val">Google Cloud</div>
+                  <div class="ap-metric-label">Platform</div>
+                </div>
+                <div>
+                  <div class="ap-metric-val">2026</div>
+                  <div class="ap-metric-label">Completed</div>
+                </div>
+              </div>
+              <a href="https://simpli-web.app.link/e/kCKpozCVb3b" target="_blank" class="acc-panel-verify">Verify
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-panel reveal-delay-3">
+          <div class="acc-collapsed">
+            <div class="acc-logo-frame"><img src="https://unpkg.com/simple-icons@v11/icons/anthropic.svg"
+                alt="Anthropic" style="filter:var(--logo-filter);width:28px;height:28px;"></div>
+          </div>
+          <div class="acc-expanded">
+            <div class="acc-expand-img"
+              style="background: url(https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?w=900&h=700&fit=crop&auto=format) center/cover no-repeat;">
+            </div>
+            <div class="acc-expand-info">
+              <div class="acc-info-header">
+                <span class="acc-panel-tag">Literacy</span>
+                <span class="acc-panel-date">Anthropic 2026</span>
+              </div>
+              <div class="acc-panel-title">AI Fluency</div>
+              <div class="acc-panel-sub">Anthropic</div>
+              <p class="acc-panel-desc">AI Fluency certification by Anthropic covering responsible AI usage, ethical
+                considerations, and practical applications of AI in modern workflows.</p>
+
+              <div class="acc-panel-pills"><span class="ap-pill">AI Ethics</span><span class="ap-pill">Responsible
+                  AI</span><span class="ap-pill">Literacy</span><span class="ap-pill">Best Practices</span></div>
+              <div class="acc-panel-metrics">
+                <div>
+                  <div class="ap-metric-val">Anthropic</div>
+                  <div class="ap-metric-label">Publisher</div>
+                </div>
+                <div>
+                  <div class="ap-metric-val">AI Ethics</div>
+                  <div class="ap-metric-label">Domain</div>
+                </div>
+                <div>
+                  <div class="ap-metric-val">2026</div>
+                  <div class="ap-metric-label">Completed</div>
+                </div>
+              </div>
+              <a href="https://verify.skilljar.com/c/4p7k4f7asdoa" target="_blank" class="acc-panel-verify">Verify
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-panel reveal-delay-4">
+          <div class="acc-collapsed">
+            <div class="acc-logo-frame"><img src="https://unpkg.com/simple-icons@v11/icons/microsoft.svg"
+                alt="Microsoft" style="filter:var(--logo-filter);width:28px;height:28px;"></div>
+          </div>
+          <div class="acc-expanded">
+            <div class="acc-expand-img"
+              style="background: url(https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=900&h=700&fit=crop&auto=format) center/cover no-repeat;">
+            </div>
+            <div class="acc-expand-info">
+              <div class="acc-info-header">
+                <span class="acc-panel-tag">Microsoft</span>
+                <span class="acc-panel-date">Microsoft 2026</span>
+              </div>
+              <div class="acc-panel-title">Azure Press</div>
+              <div class="acc-panel-sub">Microsoft Press</div>
+              <p class="acc-panel-desc">Official Microsoft Press curriculum delivered through LinkedIn Learning covering
+                foundational Azure concepts, core services, and cloud architecture patterns.</p>
+
+              <div class="acc-panel-pills"><span class="ap-pill">Azure</span><span class="ap-pill">Cloud
+                  Arch</span><span class="ap-pill">MS Press</span><span class="ap-pill">Core Services</span></div>
+              <div class="acc-panel-metrics">
+                <div>
+                  <div class="ap-metric-val">Microsoft</div>
+                  <div class="ap-metric-label">Publisher</div>
+                </div>
+                <div>
+                  <div class="ap-metric-val">Azure</div>
+                  <div class="ap-metric-label">Domain</div>
+                </div>
+                <div>
+                  <div class="ap-metric-val">2026</div>
+                  <div class="ap-metric-label">Completed</div>
+                </div>
+              </div>
+              <a href="https://www.linkedin.com/learning/certificates/f3be8b7c9fd2f98acf3fb311fa4a0f7ccc6abdc647a8c8f11e8efda81a31b830"
+                target="_blank" class="acc-panel-verify">Verify</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="contact" style="padding: 110px 60px; max-width: 1200px; margin: 0 auto;">
+      <h2 class="serif reveal" style="font-size: 3.5rem; text-align: center; margin-bottom: 60px;">
+        Let's <span class="gradient-text">Connect.</span>
+      </h2>
+
+      <div class="contact-wrapper reveal"
+        style="display: grid; grid-template-columns: 1fr 1.4fr; gap: 50px; align-items: start;">
+
+        <!-- Left: Contact Cards + Paragraph -->
+        <div class="contact-cards" style="display: flex; flex-direction: column; gap: 25px;">
+
+          <!-- Intro Paragraph -->
+          <p style="color: var(--paragraph-color); font-size: 1rem; line-height: 1.7; margin-bottom: 10px;">
+            Whether you have a question, a project idea, or just want to say hello, my inbox is always open. I'll do my
+            best to get back to you as soon as possible!
+          </p>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <!-- Email -->
+            <a href="mailto:a86839695@gmail.com" class="card tilt-active reveal"
+              style="text-align: center; border-bottom: 4px solid #f7accbe1; text-decoration: none; color: inherit; padding: 35px 20px;">
+              <div class="icon-container"><i class="fas fa-envelope"></i></div>
+              <h3 style="font-size: 1.15rem; margin: 10px 0 8px;">Email</h3>
+              <p style="font-size: 0.8rem; color: var(--muted); word-break: break-all;">a86839695@gmail.com</p>
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/yournumber" class="card tilt-active reveal"
+              style="text-align: center; border-bottom: 4px solid #f7accbe1; text-decoration: none; color: inherit; padding: 35px 20px;">
+              <div class="icon-container"><i class="fab fa-whatsapp"></i></div>
+              <h3 style="font-size: 1.15rem; margin: 10px 0 8px;">WhatsApp</h3>
+              <p style="font-size: 0.8rem; color: var(--muted);">Available now</p>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/ayesha-797-khan" class="card tilt-active reveal"
+              style="text-align: center; border-bottom: 4px solid #f7accbe1; text-decoration: none; color: inherit; padding: 35px 20px;">
+              <div class="icon-container"><i class="fab fa-linkedin"></i></div>
+              <h3 style="font-size: 1.15rem; margin: 10px 0 8px;">LinkedIn</h3>
+              <p style="font-size: 0.8rem; color: var(--muted);">Profile</p>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/Ayesha0709" class="card tilt-active reveal"
+              style="text-align: center; border-bottom: 4px solid #f7accbe1; text-decoration: none; color: inherit; padding: 35px 20px;">
+              <div class="icon-container">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="github-custom-icon">
+              </div>
+              <h3 style="font-size: 1.15rem; margin: 10px 0 8px;">GitHub</h3>
+              <p style="font-size: 0.8rem; color: var(--muted);">View Code</p>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Contact Form (Web3Forms) -->
+        <div class="contact-form-wrapper tilt-active reveal"
+          style="background: var(--surface); border: 2px solid var(--border); border-radius: var(--radius); padding: 45px; transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);">
+          <form id="contactForm" action="https://api.web3forms.com/submit" method="POST"
+            style="display: flex; flex-direction: column; gap: 22px;">
+
+            <input type="hidden" name="access_key" value="32c6bac0-8a73-4ee0-a0f0-edc61c921ec0">
+            <!--have to replace with my actual access key-->
+            <input type="hidden" name="subject" value="New Portfolio Contact Form Submission">
+            <input type="hidden" name="from_name" value="Ayesha Khan Portfolio">
+            <input type="hidden" name="redirect" value="https://web3forms.com/success">
+            <input type="checkbox" name="botcheck" style="display: none;">
+
+            <div>
+              <label for="cf-name"
+                style="display: block; font-size: 0.8rem; color: var(--muted); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.08em;">Name</label>
+              <input type="text" id="cf-name" name="name" required placeholder="Your Name"
+                style="width: 100%; padding: 15px 18px; background: var(--bg); color: var(--text); border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-family: 'DM Mono', monospace; font-size: 1.05rem; outline: none; transition: border 0.3s ease; box-sizing: border-box;"
+                onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
+            </div>
+
+            <div>
+              <label for="cf-email"
+                style="display: block; font-size: 0.8rem; color: var(--muted); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.08em;">Email</label>
+              <input type="email" id="cf-email" name="email" required placeholder="you@example.com"
+                style="width: 100%; padding: 15px 18px; background: var(--bg); color: var(--text); border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-family: 'DM Mono', monospace; font-size: 1.05rem; outline: none; transition: border 0.3s ease; box-sizing: border-box;"
+                onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
+            </div>
+
+            <div>
+              <label for="cf-message"
+                style="display: block; font-size: 0.8rem; color: var(--muted); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.08em;">Message</label>
+              <textarea id="cf-message" name="message" required rows="6" placeholder="Write your message..."
+                style="width: 100%; padding: 15px 18px; background: var(--bg); color: var(--text); border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-family: 'DM Mono', monospace; font-size: 1.05rem; outline: none; resize: vertical; transition: border 0.3s ease; box-sizing: border-box;"
+                onfocus="this.style.borderColor='var(--accent)'"
+                onblur="this.style.borderColor='var(--border)'"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn"
+              style="width: 100%; padding: 16px; background: var(--accent); color: #fff; border: none; border-radius: var(--radius-sm); font-family: 'DM Mono', monospace; font-size: 1.1rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease; letter-spacing: 0.05em; margin-top: 10px;"
+              onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 30px rgba(218,125,145,0.4)'"
+              onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+              Send Message
+            </button>
+
+            <div id="formResult" style="text-align: center; font-size: 0.9rem; min-height: 20px;"></div>
+
+          </form>
+        </div>
+
+      </div>
+
+     
+    </section>
+
+  </div>
+ 
+  <footer>
+    <p> <span class="copyright-symbol">©</span> 2026 Ayesha Khan. All rights reserved.</p>
+    <p class="footer-quote">
+      Building thoughtful digital experiences, one project at a time.
+    </p>
+    <p>
+      Designed & Developed by
+      <span class="footer-brand">AK.dev</span>
+    </p>
+  </footer>
+
+ <script src="script.js"></script>
+
+</body>
+
+</html>
