@@ -10,7 +10,7 @@ This portfolio serves as my digital presence, highlighting my journey as an aspi
 
 Every section has been carefully crafted to reflect both my creativity and attention to detail while maintaining professional design principles.
 
-Live Demo:-  Visit My Portfolio : [https://github.com/Ayesha0709/My-Developer-Portfolio.git]
+Live Demo:-  Visit My Portfolio : [https://ayesha0709.github.io/My-Developer-Portfolio/]
 ---
 
 ## ✨ Features
