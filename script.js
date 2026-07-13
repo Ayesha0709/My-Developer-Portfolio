@@ -120,13 +120,27 @@
     // Also keep the old observer alive for backward compat
     // (already handled above)
     // === HAMBURGER ===
-    document.getElementById('hamburger')?.addEventListener('click', function () {
-      document.getElementById('mobileMenu').classList.toggle('open');
-    });
+    
+    const hamburger = document.querySelector(".hamburger");
+const mobileMenu = document.querySelector(".mobile-menu");
 
-    function closeMobile() {
-      document.getElementById('mobileMenu').classList.remove('open');
-    }
+hamburger.addEventListener("click", () => {
+
+    hamburger.classList.toggle("active");
+
+    mobileMenu.classList.toggle("active");
+
+    document.body.classList.toggle("menu-open");
+
+});
+
+   function closeMobile() {
+
+    mobileMenu.classList.remove("active");
+    hamburger.classList.remove("active");
+    document.body.classList.remove("menu-open");
+
+} 
 
     
   document.querySelectorAll('.experience-card').forEach(item => {
@@ -135,3 +149,112 @@
       this.classList.add('active');
     });
   });
+
+
+
+  const sound = document.getElementById("decryptSound");
+
+const chars =
+"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+
+function decrypt(element, finalText) {
+
+    let progress = 0;
+    const duration = 1800; // milliseconds
+
+    cancelAnimationFrame(element.animationFrame);
+
+    const start = performance.now();
+
+    function animate(now) {
+
+        const elapsed = now - start;
+
+        progress = Math.min(elapsed / duration, 1);
+
+        // easeInOutCubic
+        const eased =
+            progress < 0.5
+                ? 4 * progress * progress * progress
+                : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+        const revealCount =
+            Math.floor(eased * finalText.length);
+
+if (revealCount > lastReveal) {
+
+    sound.currentTime = 0;
+
+    sound.play().catch(() => {});
+
+    lastReveal = revealCount;
+
+}
+
+
+        element.textContent = finalText
+            .split("")
+            .map((letter, index) => {
+
+                if (letter === " ") return " ";
+
+                if (index < revealCount)
+                    return finalText[index];
+
+                return chars[
+                    Math.floor(Math.random() * chars.length)
+                ];
+
+            })
+            .join("");
+
+        if (progress < 1) {
+
+            element.animationFrame =
+                requestAnimationFrame(animate);
+
+        } else {
+
+            element.textContent = finalText;
+
+        }
+
+    }
+
+    element.animationFrame =
+        requestAnimationFrame(animate);
+sound.volume = 0.19;
+let lastReveal = -1;
+}
+
+  
+
+const firstName = document.getElementById("decrypt-first");
+const lastName = document.getElementById("decrypt-last");
+
+window.addEventListener("load",()=>{
+
+    decrypt(firstName,"Ayesha");
+
+    setTimeout(()=>{
+
+        decrypt(lastName,"Khan");
+
+    },250);
+
+});
+[firstName,lastName].forEach(el=>{
+
+    el.addEventListener("mouseenter",()=>{
+
+        decrypt(firstName,"Ayesha");
+
+        decrypt(lastName,"Khan");
+
+    });
+
+});
+
+
+
+

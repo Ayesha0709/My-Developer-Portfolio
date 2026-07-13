@@ -1,0 +1,3169 @@
+/* ==========================================
+   MOBILE.CSS
+   PART 1
+   Global + Navigation + Hero
+========================================== */
+
+
+/* ---------- Large Tablets ---------- */
+
+@media (max-width:1024px){
+
+.container{
+    padding:0 32px;
+}
+
+nav{
+    padding:18px 32px;
+}
+
+section{
+    padding:80px 0;
+}
+
+.hero{
+    min-height:85vh;
+}
+
+.hero h1{
+    font-size:clamp(60px,10vw,82px);
+}
+
+}
+
+
+/* ---------- Tablets ---------- */
+
+@media (max-width:768px){
+
+/* Hide desktop nav */
+
+.nav-links{
+    display:none;
+}
+
+
+.nav-actions{
+
+    display:flex;
+
+    align-items:center;
+    justify-content:flex-end;
+    gap:12px;
+    margin-left:auto;
+
+}
+/* Show hamburger */
+
+.hamburger{
+    display:flex;
+}
+
+/* Navigation */
+
+nav{
+
+    padding:18px 24px;
+
+    height:72px;
+    justify-content:space-between;
+
+}
+
+.logo{
+
+    font-size:1.45rem;
+
+}
+
+/* Mobile Menu */
+
+.mobile-menu{
+
+    display:flex;
+
+    padding:90px 30px;
+
+    gap:26px;
+
+}
+
+.mobile-menu a{
+
+    font-size:2rem;
+
+}
+
+@media (max-width:768px){
+
+nav{
+
+    padding:16px 20px;
+
+}
+
+}
+/* Hero */
+
+.hero{
+
+    min-height:100vh;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding-top:80px;
+
+}
+
+.hero h1{
+
+    font-size:clamp(48px,13vw,72px);
+
+    line-height:.95;
+
+}
+
+.hero p{
+
+    max-width:95% !important;
+
+    margin:25px auto !important;
+
+    font-size:.95rem;
+
+    line-height:1.8;
+
+}
+
+.hero .btn{
+
+    width:100%;
+
+    max-width:320px;
+
+}
+
+.container{
+
+    padding:0 24px;
+
+}
+
+/* Skill train */
+
+.skill-train span{
+
+    padding:0 22px;
+
+    font-size:.72rem;
+
+}
+
+}
+
+
+/* ---------- Phones ---------- */
+
+@media (max-width:480px){
+
+.container{
+
+    padding:0 18px;
+
+}
+
+nav{
+
+    padding:16px 18px;
+
+}
+
+.logo{
+
+    font-size:1.25rem;
+
+}
+
+.hero{
+
+    min-height:100vh;
+
+    padding-top:70px;
+
+}
+
+.hero h1{
+
+    font-size:clamp(42px,15vw,58px);
+
+}
+
+.hero p{
+
+    font-size:.9rem;
+
+    line-height:1.75;
+
+}
+
+.hero .btn{
+
+    width:100%;
+
+}
+
+.skill-train-container{
+
+    margin-bottom:30px;
+
+}
+
+.skill-train span{
+
+    padding:0 16px;
+
+    font-size:.65rem;
+
+}
+
+}
+
+
+/* ---------- Small Phones ---------- */
+
+@media (max-width:360px){
+
+.hero h1{
+
+    font-size:38px;
+
+}
+
+.hero p{
+
+    font-size:.82rem;
+
+}
+
+.logo{
+
+    font-size:1.1rem;
+
+}
+
+.mobile-menu a{
+
+    font-size:1.6rem;
+
+}
+
+}
+/* ==========================================
+   MOBILE.CSS
+   PART 2
+   About + Skills
+==========================================*/
+
+
+/* ==========================================
+   TABLETS
+==========================================*/
+
+@media (max-width:768px){
+
+/* ----------------------------------
+   ABOUT SECTION
+-----------------------------------*/
+
+#about{
+
+    padding:70px 0 !important;
+
+}
+
+#about > div{
+
+    display:flex !important;
+
+    flex-direction:column;
+
+    gap:40px !important;
+
+    padding:0 !important;
+
+    min-height:auto !important;
+
+    align-items:flex-start !important;
+
+}
+
+#about h2{
+
+    font-size:2.4rem !important;
+
+    line-height:1.15;
+
+    margin-bottom:18px !important;
+
+}
+
+#about p{
+
+    max-width:100% !important;
+
+    font-size:.95rem;
+
+    line-height:1.8;
+
+}
+
+#about .reveal:last-child{
+
+    width:100%;
+
+}
+
+/* Statistics Cards */
+
+#about .card{
+
+    flex:1 1 calc(50% - 10px) !important;
+
+    min-width:150px !important;
+
+    padding:22px;
+
+}
+
+#about .card .serif{
+
+    font-size:2rem !important;
+
+}
+
+#about .card div:last-child{
+
+    font-size:.75rem !important;
+
+}
+
+
+/* ----------------------------------
+   SKILLS SECTION
+-----------------------------------*/
+
+#skills{
+
+    padding:70px 0 !important;
+
+}
+
+#skills h2{
+
+    font-size:2.3rem !important;
+
+    margin-bottom:30px !important;
+
+    text-align:center;
+
+}
+
+#skill-list{
+
+    display:flex !important;
+
+    flex-direction:column;
+
+    gap:18px !important;
+
+}
+
+#skill-list .card{
+
+    width:100%;
+
+    min-width:100% !important;
+
+    padding:24px;
+
+}
+
+#skill-list .card div:first-child{
+
+    font-size:.72rem !important;
+
+}
+
+.pill{
+
+    padding:7px 14px;
+
+    font-size:.72rem;
+
+    margin:5px;
+
+}
+
+}
+
+
+/* ==========================================
+   MOBILE
+==========================================*/
+
+@media (max-width:480px){
+
+/* ----------------------------------
+   ABOUT
+-----------------------------------*/
+
+#about{
+
+    padding:60px 0 !important;
+
+}
+
+#about h2{
+
+    font-size:2rem !important;
+
+    text-align:center;
+
+}
+
+#about p{
+
+    text-align:center;
+
+    font-size:.9rem;
+
+}
+
+#about > div{
+
+    align-items:center !important;
+
+}
+
+/* Statistics */
+
+#about .reveal:last-child{
+
+    display:grid !important;
+
+    grid-template-columns:1fr;
+
+    gap:16px;
+
+    width:100%;
+
+}
+
+#about .card{
+
+    width:100%;
+
+    min-width:unset !important;
+
+    padding:22px;
+
+    text-align:center !important;
+
+}
+
+#about .card .serif{
+
+    font-size:1.8rem !important;
+
+}
+
+
+/* ----------------------------------
+   SKILLS
+-----------------------------------*/
+
+#skills{
+
+    padding:60px 0 !important;
+
+}
+
+#skills h2{
+
+    font-size:2rem !important;
+
+}
+
+#skill-list{
+
+    gap:16px !important;
+
+}
+
+#skill-list .card{
+
+    padding:20px;
+
+    border-radius:18px;
+
+}
+
+#skill-list .card div:first-child{
+
+    margin-bottom:16px !important;
+
+}
+
+.pill{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:8px 14px;
+
+    font-size:.68rem;
+
+    margin:4px;
+
+}
+
+}
+
+
+/* ==========================================
+   SMALL PHONES
+==========================================*/
+
+@media (max-width:360px){
+
+#about h2{
+
+    font-size:1.8rem !important;
+
+}
+
+#about p{
+
+    font-size:.85rem;
+
+}
+
+#about .card{
+
+    padding:18px;
+
+}
+
+#about .card .serif{
+
+    font-size:1.6rem !important;
+
+}
+
+#skills h2{
+
+    font-size:1.8rem !important;
+
+}
+
+#skill-list .card{
+
+    padding:18px;
+
+}
+
+.pill{
+
+    width:100%;
+
+    justify-content:center;
+
+    margin:4px 0;
+
+}
+
+}
+/* ==========================================
+   MOBILE.CSS
+   PART 3
+   Projects Section
+==========================================*/
+
+
+/* ==========================================
+   LARGE TABLETS
+==========================================*/
+
+@media (max-width:1024px){
+
+#projects{
+
+    max-width:100% !important;
+    padding:90px 32px !important;
+
+}
+
+.projects-grid{
+
+    grid-template-columns:1fr !important;
+    gap:28px;
+
+}
+
+.project-card.featured{
+
+    grid-column:auto !important;
+
+}
+
+.project-card{
+
+    width:100%;
+
+}
+
+.project-card.featured .project-img{
+
+    height:300px;
+
+}
+
+.project-img{
+
+    height:240px;
+
+}
+
+}
+
+
+/* ==========================================
+   TABLETS
+==========================================*/
+
+@media (max-width:768px){
+
+#projects{
+
+    padding:70px 24px !important;
+
+}
+
+/* Section Heading */
+
+#projects .section-label{
+
+    justify-content:center;
+
+}
+
+#projects .section-title{
+
+    text-align:center;
+
+    font-size:2.5rem;
+
+    margin-bottom:45px;
+
+}
+
+/* Grid */
+
+.projects-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr !important;
+
+    gap:24px;
+
+}
+
+/* Cards */
+
+.project-card{
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+}
+
+/* Images */
+
+.project-card.featured .project-img{
+
+    height:260px;
+
+}
+
+.project-img{
+
+    height:220px;
+
+}
+
+.project-img img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+/* Body */
+
+.project-body{
+
+    padding:24px;
+
+}
+
+/* Title Row */
+
+.project-title-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:16px;
+
+}
+
+.project-title{
+
+    font-size:1.8rem;
+
+    line-height:1.2;
+
+}
+
+/* Description */
+
+.project-desc{
+
+    font-size:.9rem;
+
+    line-height:1.7;
+
+}
+
+/* Tech Pills */
+
+.project-pills{
+
+    gap:8px;
+
+}
+
+.project-pills .pill{
+
+    padding:7px 14px;
+
+    font-size:.68rem;
+
+}
+
+/* Metrics */
+
+.project-metrics{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:16px;
+
+    text-align:center;
+
+}
+
+.metric{
+
+    padding-top:6px;
+
+}
+
+.metric-val{
+
+    font-size:1.3rem;
+
+}
+
+.metric-label{
+
+    font-size:.62rem;
+
+}
+
+/* Buttons */
+
+.project-actions{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.project-inline-arrow,
+
+.project-inline-github{
+
+    width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+/* Modal */
+
+.modal{
+
+    width:92%;
+
+    max-height:90vh;
+
+    overflow-y:auto;
+
+    border-radius:22px;
+
+    padding:24px;
+
+}
+
+}
+
+
+/* ==========================================
+   PHONES
+==========================================*/
+
+@media (max-width:480px){
+
+#projects{
+
+    padding:60px 18px !important;
+
+}
+
+/* Heading */
+
+#projects .section-title{
+
+    font-size:2rem;
+
+    line-height:1.15;
+
+    margin-bottom:36px;
+
+}
+
+/* Cards */
+
+.project-card{
+
+    border-radius:20px;
+
+}
+
+/* Images */
+
+.project-card.featured .project-img{
+
+    height:210px;
+
+}
+
+.project-img{
+
+    height:180px;
+
+}
+
+/* Featured Tag */
+
+.project-tag{
+
+    font-size:.58rem;
+
+    padding:5px 10px;
+
+    top:14px;
+
+    left:14px;
+
+}
+
+/* Body */
+
+.project-body{
+
+    padding:20px;
+
+}
+
+/* Title */
+
+.project-title{
+
+    font-size:1.45rem;
+
+}
+
+/* Description */
+
+.project-desc{
+
+    font-size:.82rem;
+
+}
+
+/* Pills */
+
+.project-pills{
+
+    gap:6px;
+
+}
+
+.project-pills .pill{
+
+    font-size:.64rem;
+
+    padding:6px 11px;
+
+}
+
+/* Metrics */
+
+.project-metrics{
+
+    grid-template-columns:1fr;
+
+    gap:18px;
+
+    text-align:left;
+
+}
+
+.metric{
+
+    border-bottom:1px solid var(--border);
+
+    padding-bottom:14px;
+
+}
+
+.metric:last-child{
+
+    border-bottom:none;
+
+    padding-bottom:0;
+
+}
+
+/* Action Buttons */
+
+.project-title-row{
+
+    flex-direction:column;
+
+}
+
+.project-actions{
+
+    width:100%;
+
+    justify-content:flex-end;
+
+}
+
+.project-inline-arrow,
+
+.project-inline-github{
+
+    width:40px;
+
+    height:40px;
+
+}
+
+/* Modal */
+
+.modal{
+
+    width:95%;
+
+    padding:18px;
+
+    border-radius:18px;
+
+}
+
+}
+
+
+/* ==========================================
+   SMALL PHONES
+==========================================*/
+
+@media (max-width:360px){
+
+#projects{
+
+    padding:50px 14px !important;
+
+}
+
+#projects .section-title{
+
+    font-size:1.7rem;
+
+}
+
+.project-card.featured .project-img{
+
+    height:180px;
+
+}
+
+.project-img{
+
+    height:160px;
+
+}
+
+.project-body{
+
+    padding:16px;
+
+}
+
+.project-title{
+
+    font-size:1.25rem;
+
+}
+
+.project-desc{
+
+    font-size:.78rem;
+
+}
+
+.project-pills{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+}
+
+.project-pills .pill{
+
+    width:100%;
+
+    justify-content:center;
+
+    text-align:center;
+
+}
+
+.metric-val{
+
+    font-size:1.15rem;
+
+}
+
+.metric-label{
+
+    font-size:.6rem;
+
+}
+
+.project-inline-arrow,
+
+.project-inline-github{
+
+    width:36px;
+
+    height:36px;
+
+}
+
+}
+
+
+/* ==========================================
+   TOUCH DEVICE OPTIMIZATION
+==========================================*/
+
+@media (hover:none){
+
+.project-card:hover{
+
+    transform:none;
+
+    box-shadow:none;
+
+}
+
+.project-img-inner{
+
+    opacity:.45 !important;
+
+    transform:none !important;
+
+}
+
+.project-card:hover .project-arrow{
+
+    transform:none;
+
+}
+
+.project-inline-arrow:active,
+
+.project-inline-github:active{
+
+    transform:scale(.94);
+
+}
+
+}
+/* ==========================================
+   MOBILE.CSS
+   PART 4
+   Internship + Experience
+==========================================*/
+
+
+/* ==========================================
+   LARGE TABLETS
+==========================================*/
+
+@media (max-width:1024px){
+
+/* ----------------------------------
+   INTERNSHIP
+-----------------------------------*/
+
+#internship{
+
+    max-width:100% !important;
+    padding:90px 32px !important;
+
+}
+
+.experience-slider{
+
+    display:flex !important;
+    flex-direction:column;
+    gap:24px;
+    height:auto;
+
+}
+
+.experience-card{
+
+    width:100%;
+    min-height:460px;
+    flex:none;
+    border-radius: 20px;
+
+}
+
+/* ----------------------------------
+   EXPERIENCE
+-----------------------------------*/
+
+#experience{
+
+    max-width:100% !important;
+    padding:90px 32px !important;
+
+}
+
+.accordion{
+
+    display:flex;
+    flex-direction:column;
+    height:auto !important;
+    gap:22px;
+
+}
+
+.accordion-panel{
+
+    flex:none !important;
+    width:100%;
+    min-height:620px;
+
+}
+
+.accordion-panel:hover{
+
+    flex:none !important;
+
+}
+
+}
+
+
+/* ==========================================
+   TABLETS
+==========================================*/
+
+@media (max-width:768px){
+
+/* ----------------------------------
+   COMMON
+-----------------------------------*/
+
+#internship .section-label,
+#experience .section-label{
+
+    justify-content:center;
+
+}
+
+#internship .section-title,
+#experience .section-title{
+
+    text-align:center;
+    font-size:2.5rem;
+    margin-bottom:45px;
+
+}
+
+/* ----------------------------------
+   INTERNSHIP
+-----------------------------------*/
+
+#internship{
+
+    padding:70px 24px !important;
+
+}
+
+.experience-slider{
+
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+    height:auto;
+
+}
+
+.experience-card{
+
+    position:relative;
+    display:block;
+    width:100%;
+    height:auto;
+    min-height:unset;
+    padding:0;
+    overflow:hidden;
+    border-radius:22px;
+    flex:none;
+
+}
+
+/* Disable accordion expansion on mobile */
+.experience-card:hover{
+
+    flex:none;
+    transform:none;
+
+}
+
+/* ---------------- IMAGE ---------------- */
+
+.experience-image{
+
+    position:relative;
+    width:100%;
+    height:230px;
+    overflow:hidden;
+
+}
+
+.experience-image img{
+
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    opacity:1 !important;
+    transform:none !important;
+
+    -webkit-mask-image:linear-gradient(
+        to bottom,
+        black 0%,
+        black 70%,
+        transparent 100%
+    );
+
+    mask-image:linear-gradient(
+        to bottom,
+        black 0%,
+        black 70%,
+        transparent 100%
+    );
+
+}
+
+.experience-overlay{
+
+    position:absolute;
+    inset:0;
+    opacity:1;
+
+    background:linear-gradient(
+        to bottom,
+        rgba(0,0,0,.05) 0%,
+        rgba(0,0,0,.20) 45%,
+        rgba(0,0,0,.70) 100%
+    );
+
+}
+
+/* ---------------- CONTENT ---------------- */
+
+.intern-title-group{
+
+    position:relative;
+    opacity:1;
+    transform:none;
+
+    margin:20px 20px 14px;
+    padding:20px;
+
+    border-radius:18px;
+
+    background:rgba(20,20,20,.45);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+
+    z-index:2;
+
+}
+
+.intern-title-group h3{
+
+    font-size:1.8rem;
+
+}
+
+.experience-content{
+
+    position:relative;
+
+    opacity:1 !important;
+    transform:none !important;
+
+    max-height:none;
+    overflow:visible;
+
+    margin:0 20px 20px;
+    padding:20px;
+
+    border-radius:18px;
+
+    background:rgba(20,20,20,.35);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+
+    z-index:2;
+
+}
+
+/* ---------------- ICON ---------------- */
+
+.intern-icon{
+
+    position:absolute;
+
+    top:185px;
+    right:18px;
+
+    width:46px;
+    height:46px;
+
+    z-index:20;
+
+}
+
+/* Hide desktop-only elements */
+
+.side-title,
+.card-number{
+
+    display:none;
+
+}
+
+/* ----------------------------------
+   EXPERIENCE
+-----------------------------------*/
+
+#experience{
+
+    padding:70px 24px !important;
+
+}
+
+.accordion{
+
+    gap:20px;
+
+}
+
+.accordion-panel{
+
+    min-height:auto;
+    overflow:hidden;
+
+}
+
+/* Keep the expanded panel visible and in normal flow on mobile */
+
+.accordion-panel{
+
+    overflow:visible;
+    height:auto !important;
+    min-height:0;
+
+}
+
+.acc-collapsed{
+
+    display:none !important;
+
+}
+
+.acc-expanded{
+
+    position:relative !important;
+    
+    opacity:1 !important;
+    display:flex !important;
+    flex-direction:column !important;
+    pointer-events:auto !important;
+    width:100%;
+    z-index:auto;
+
+}
+
+/* Image */
+
+.acc-expand-img{
+
+    width:100%;
+    height:240px;
+    flex:none;
+    border-radius:20px 20px 0 0;
+    overflow:hidden;
+
+}
+
+/* Info */
+
+.acc-expand-info{
+
+    padding:26px;
+    width:100%;
+    box-sizing:border-box;
+
+}
+
+.acc-panel-title{
+
+    font-size:2rem;
+
+}
+
+.acc-panel-sub{
+
+    font-size:1rem;
+
+}
+
+.acc-panel-desc{
+
+    font-size:.92rem;
+    line-height:1.8;
+
+}
+
+.acc-panel-details{
+
+    padding-left:18px;
+
+}
+
+.acc-panel-details li{
+
+    margin-bottom:8px;
+
+}
+
+.acc-panel-pills{
+
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+
+}
+
+.acc-panel-metrics{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    text-align:center;
+
+}
+
+}
+
+
+/* ==========================================
+   PHONES
+==========================================*/
+
+@media (max-width:480px){
+
+/* ----------------------------------
+   SECTION HEADINGS
+-----------------------------------*/
+
+#internship .section-title,
+#experience .section-title{
+
+    font-size:2rem;
+    line-height:1.15;
+
+}
+
+/* ----------------------------------
+   INTERNSHIP
+-----------------------------------*/
+
+#internship{
+
+    padding:60px 18px !important;
+
+}
+
+.experience-slider{
+
+    gap:18px;
+
+}
+
+.experience-card{
+
+    border-radius:18px;
+
+}
+
+.experience-image{
+
+    height:190px;
+
+}
+
+.intern-icon{
+
+    top:145px;
+    right:16px;
+
+    width:42px;
+    height:42px;
+
+}
+
+.intern-title-group{
+
+    margin:16px;
+    padding:18px;
+
+}
+
+.intern-title-group h3{
+
+    font-size:1.45rem;
+
+}
+
+.exp-subtitle{
+
+    font-size:.75rem;
+
+}
+
+.experience-content{
+
+    margin:0 16px 16px;
+    padding:18px;
+
+}
+
+.experience-content p{
+
+    font-size:.88rem;
+    line-height:1.7;
+
+}
+
+.experience-content .ap-pill{
+
+    font-size:.68rem;
+
+}
+
+/* ----------------------------------
+   EXPERIENCE
+-----------------------------------*/
+
+#experience{
+
+    padding:60px 18px !important;
+
+}
+
+.accordion{
+
+    gap:18px;
+
+}
+
+.accordion-panel{
+
+    border-radius:18px;
+
+}
+
+.acc-expand-img{
+
+    height:190px;
+
+}
+
+.acc-expand-info{
+
+    padding:20px;
+
+}
+
+.acc-info-header{
+
+    flex-direction:column;
+    align-items:flex-start;
+    gap:8px;
+
+}
+
+.acc-panel-title{
+
+    font-size:1.6rem;
+
+}
+
+.acc-panel-sub{
+
+    font-size:.9rem;
+
+}
+
+.acc-panel-desc{
+
+    font-size:.82rem;
+
+}
+
+.acc-panel-details{
+
+    font-size:.82rem;
+
+}
+
+.acc-panel-pills{
+
+    gap:6px;
+
+}
+
+.acc-panel-pills .ap-pill{
+
+    font-size:.65rem;
+
+}
+
+.acc-panel-metrics{
+
+    grid-template-columns:1fr;
+    text-align:left;
+    gap:18px;
+
+}
+
+.ap-metric-val{
+
+    font-size:1.25rem;
+
+}
+
+}
+
+
+/* ==========================================
+   SMALL PHONES
+==========================================*/
+
+@media (max-width:360px){
+
+#internship,
+#experience{
+
+    padding:50px 14px !important;
+
+}
+
+#internship .section-title,
+#experience .section-title{
+
+    font-size:1.7rem;
+
+}
+
+.experience-image{
+
+    height:170px;
+
+}
+
+.intern-icon{
+
+    top:130px;
+
+    width:38px;
+    height:38px;
+
+}
+
+.intern-title-group{
+
+    margin:14px;
+    padding:16px;
+
+}
+
+.intern-title-group h3{
+
+    font-size:1.25rem;
+
+}
+
+.experience-content{
+
+    margin:0 14px 14px;
+    padding:16px;
+
+}
+
+.experience-content p{
+
+    font-size:.8rem;
+
+}
+
+.experience-content .ap-pill{
+
+    width:auto;
+
+}
+
+.acc-expand-img{
+
+    height:160px;
+
+}
+
+.acc-expand-info{
+
+    padding:16px;
+
+}
+
+.acc-panel-title{
+
+    font-size:1.35rem;
+
+}
+
+.acc-panel-desc{
+
+    font-size:.78rem;
+
+}
+
+.acc-panel-details{
+
+    font-size:.78rem;
+
+}
+
+.acc-panel-pills .ap-pill{
+
+    width:100%;
+    justify-content:center;
+    text-align:center;
+
+}
+
+}
+
+
+/* ==========================================
+   TOUCH DEVICE OPTIMIZATION
+==========================================*/
+
+@media (hover:none){
+
+/* Internship */
+
+.experience-card:hover{
+
+    flex:none;
+    box-shadow:none;
+    transform:none;
+
+}
+
+.experience-card:hover .experience-image img{
+
+    transform:none;
+
+}
+
+.experience-card:hover .intern-title-group,
+.experience-card:hover .experience-content{
+
+    opacity:1;
+
+}
+
+/* Experience */
+
+.accordion-panel:hover{
+
+    box-shadow:none;
+    transform:none;
+
+}
+
+.acc-expanded{
+
+    opacity:1 !important;
+    display:flex !important;
+    position:relative !important;
+   
+    pointer-events:auto !important;
+
+}
+
+}
+/* =====================================================
+   MOBILE.CSS
+   PART 5
+   Education • Certifications • Contact • Footer
+======================================================*/
+
+
+/* =====================================================
+   1024px
+======================================================*/
+
+@media (max-width:1024px){
+
+#education,
+#certifications,
+#contact{
+
+    max-width:100% !important;
+    padding:90px 32px !important;
+
+}
+
+}
+
+
+/* =====================================================
+   768px
+======================================================*/
+
+@media (max-width:768px){
+
+/* ------------------------------------
+   COMMON HEADINGS
+------------------------------------ */
+
+#education .section-label,
+#certifications .section-label,
+#contact .section-label{
+
+    justify-content:center;
+
+}
+
+#education .section-title,
+#certifications .section-title,
+#contact .section-title{
+
+    text-align:center;
+    font-size:2.5rem;
+    margin-bottom:45px;
+
+}
+
+
+/* ------------------------------------
+   EDUCATION
+------------------------------------ */
+
+#education{
+
+    padding:70px 24px !important;
+
+}
+
+.education-grid{
+
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:22px;
+
+}
+
+.education-card{
+
+    width:100%;
+    padding:24px;
+
+}
+
+.education-card h3{
+
+    font-size:1.6rem;
+
+}
+
+.education-card p{
+
+    font-size:.9rem;
+
+}
+
+
+/* ------------------------------------
+   CERTIFICATIONS
+------------------------------------ */
+
+#certifications{
+
+    padding:70px 24px !important;
+
+}
+
+.cert-grid,
+.certifications-grid{
+
+    display:grid !important;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+
+}
+
+.cert-card{
+
+    width:100%;
+    padding:22px;
+    min-height:auto;
+
+}
+
+.cert-card img{
+
+    max-width:70px;
+    height:auto;
+
+}
+
+.cert-card h3{
+
+    font-size:1rem;
+
+}
+
+.cert-card p{
+
+    font-size:.8rem;
+
+}
+
+
+/* ------------------------------------
+   CONTACT
+------------------------------------ */
+
+#contact{
+
+    padding:70px 24px !important;
+
+}
+
+.contact-wrapper,
+.contact-grid{
+
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:32px;
+
+}
+
+.contact-info{
+
+    text-align:center;
+
+}
+
+.contact-info h2{
+
+    font-size:2rem;
+
+}
+
+.contact-info p{
+
+    font-size:.92rem;
+
+}
+
+.contact-links{
+
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:16px;
+
+}
+
+.contact-links a{
+
+    width:52px;
+    height:52px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.contact-form{
+
+    width:100%;
+
+}
+
+.contact-form input,
+.contact-form textarea{
+
+    width:100%;
+    font-size:.92rem;
+
+}
+
+.contact-form button{
+
+    width:100%;
+
+}
+
+
+/* ------------------------------------
+   FOOTER
+------------------------------------ */
+
+footer{
+
+    padding:40px 24px;
+
+    text-align:center;
+
+}
+
+.footer-content{
+
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+
+}
+
+.footer-links{
+
+    justify-content:center;
+    flex-wrap:wrap;
+
+}
+
+}
+
+
+/* =====================================================
+   480px
+======================================================*/
+
+@media (max-width:480px){
+
+#education,
+#certifications,
+#contact{
+
+    padding:60px 18px !important;
+
+}
+
+/* Headings */
+
+#education .section-title,
+#certifications .section-title,
+#contact .section-title{
+
+    font-size:2rem;
+
+}
+
+/* Education */
+
+.education-card{
+
+    padding:20px;
+
+}
+
+.education-card h3{
+
+    font-size:1.4rem;
+
+}
+
+/* Certifications */
+
+.cert-grid,
+.certifications-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.cert-card{
+
+    text-align:center;
+    padding:20px;
+
+}
+
+.cert-card img{
+
+    max-width:60px;
+
+}
+
+/* Contact */
+
+.contact-info h2{
+
+    font-size:1.7rem;
+
+}
+
+.contact-info p{
+
+    font-size:.82rem;
+
+}
+
+.contact-links{
+
+    gap:14px;
+
+}
+
+.contact-links a{
+
+    width:46px;
+    height:46px;
+
+}
+
+.contact-form input,
+.contact-form textarea{
+
+    padding:14px;
+
+}
+
+.contact-form button{
+
+    padding:15px;
+
+}
+
+/* Footer */
+
+footer{
+
+    padding:32px 18px;
+
+}
+
+.footer-links{
+
+    gap:14px;
+
+}
+
+}
+
+
+/* =====================================================
+   360px
+======================================================*/
+
+@media (max-width:360px){
+
+#education,
+#certifications,
+#contact{
+
+    padding:50px 14px !important;
+
+}
+
+#education .section-title,
+#certifications .section-title,
+#contact .section-title{
+
+    font-size:1.7rem;
+
+}
+
+.education-card{
+
+    padding:18px;
+
+}
+
+.cert-card{
+
+    padding:18px;
+
+}
+
+.contact-links{
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+
+}
+
+.contact-links a{
+
+    width:100%;
+
+}
+
+footer{
+
+    font-size:.8rem;
+
+}
+
+}
+
+
+/* =====================================================
+   TOUCH DEVICES
+======================================================*/
+
+@media (hover:none){
+
+.cert-card:hover,
+.education-card:hover{
+
+    transform:none;
+    box-shadow:none;
+
+}
+
+.contact-links a:active{
+
+    transform:scale(.95);
+
+}
+
+}
+/* ==========================================================
+   MOBILE.CSS
+   PART 6
+   Premium Responsive Polish & Performance
+   (Add this at the END of mobile.css)
+==========================================================*/
+
+
+/* ==========================================================
+   GLOBAL RESPONSIVE FIXES
+==========================================================*/
+
+*,
+*::before,
+*::after{
+    box-sizing:border-box;
+}
+
+html{
+    overflow-x:hidden;
+    -webkit-text-size-adjust:100%;
+    scroll-padding-top:90px;
+}
+
+body{
+    overflow-x:hidden;
+    width:100%;
+}
+
+img,
+video,
+canvas,
+svg{
+    max-width:100%;
+    height:auto;
+    display:block;
+}
+
+iframe{
+    max-width:100%;
+}
+
+section{
+    overflow:hidden;
+}
+
+.container{
+    width:min(100%,1200px);
+}
+
+
+/* ==========================================================
+   BETTER TYPOGRAPHY
+==========================================================*/
+
+h1{
+
+    font-size:clamp(2.8rem,10vw,6rem);
+
+}
+
+h2{
+
+    font-size:clamp(2rem,7vw,4rem);
+
+}
+
+h3{
+
+    font-size:clamp(1.3rem,4vw,2rem);
+
+}
+
+p{
+
+    font-size:clamp(.92rem,2vw,1rem);
+
+    line-height:1.75;
+
+}
+
+.section-title{
+
+    line-height:1.1;
+
+}
+
+.gradient-text{
+
+    word-break:break-word;
+
+}
+
+
+/* ==========================================================
+   FLEX + GRID OVERFLOW FIX
+==========================================================*/
+
+.card,
+.project-card,
+.experience-card,
+.accordion-panel{
+
+    min-width:0;
+
+}
+
+.projects-grid,
+.education-grid,
+.cert-grid,
+.contact-grid{
+
+    width:100%;
+
+}
+
+
+/* ==========================================================
+   BUTTONS
+==========================================================*/
+
+.btn{
+
+    min-height:52px;
+
+    white-space:nowrap;
+
+}
+
+button{
+
+    touch-action:manipulation;
+
+}
+
+button,
+a{
+
+    -webkit-tap-highlight-color:transparent;
+
+}
+
+
+/* ==========================================================
+   TOUCH TARGETS
+==========================================================*/
+
+.project-inline-arrow,
+.project-inline-github,
+.contact-links a,
+.theme-switch,
+.hamburger{
+
+    min-width:42px;
+    min-height:42px;
+
+}
+
+
+/* ==========================================================
+   NAVBAR IMPROVEMENTS
+==========================================================*/
+
+nav{
+
+    backdrop-filter:blur(24px);
+
+    -webkit-backdrop-filter:blur(24px);
+
+}
+
+.mobile-menu{
+
+    overscroll-behavior:contain;
+
+}
+
+
+/* ==========================================================
+   LONG WORDS
+==========================================================*/
+
+.project-title,
+.acc-panel-title,
+.section-title,
+.hero h1{
+
+    overflow-wrap:break-word;
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE TABLES
+==========================================================*/
+
+table{
+
+    display:block;
+
+    overflow-x:auto;
+
+}
+
+
+/* ==========================================================
+   FORM IMPROVEMENTS
+==========================================================*/
+
+input,
+textarea,
+select{
+
+    appearance:none;
+
+    border-radius:14px;
+
+}
+
+textarea{
+
+    resize:vertical;
+
+}
+
+
+/* ==========================================================
+   SCROLLBAR
+==========================================================*/
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--accent);
+
+    border-radius:20px;
+
+}
+
+
+/* ==========================================================
+   MOBILE PERFORMANCE
+==========================================================*/
+
+@media (max-width:768px){
+
+*{
+
+    animation-duration:.35s !important;
+
+    transition-duration:.25s !important;
+
+}
+
+}
+
+
+/* ==========================================================
+   TOUCH DEVICES
+==========================================================*/
+
+@media (hover:none){
+
+.tilt-active{
+
+    transform:none !important;
+
+}
+
+.card:hover,
+.project-card:hover,
+.experience-card:hover,
+.accordion-panel:hover{
+
+    transform:none !important;
+
+    box-shadow:none !important;
+
+}
+
+}
+
+
+/* ==========================================================
+   SMALL TABLETS
+==========================================================*/
+
+@media (max-width:900px){
+
+.container{
+
+    padding-left:22px;
+
+    padding-right:22px;
+
+}
+
+}
+
+
+/* ==========================================================
+   PHONES
+==========================================================*/
+
+@media (max-width:600px){
+
+section{
+
+    padding-top:55px !important;
+
+    padding-bottom:55px !important;
+
+}
+
+.card,
+.project-card,
+.experience-card{
+
+    border-radius:18px;
+
+}
+
+.pill,
+.ap-pill{
+
+    white-space:nowrap;
+
+}
+
+.hero{
+
+    text-align:center;
+
+}
+
+}
+
+
+/* ==========================================================
+   VERY SMALL DEVICES
+==========================================================*/
+
+@media (max-width:360px){
+
+html{
+
+    font-size:14px;
+
+}
+
+.container{
+
+    padding-inline:14px;
+
+}
+
+.btn{
+
+    width:100%;
+
+}
+
+.logo{
+
+    letter-spacing:.04em;
+
+}
+
+}
+
+
+/* ==========================================================
+   SAFE AREA (iPhone)
+==========================================================*/
+
+@supports (padding:max(0px)){
+
+nav{
+
+padding-left:max(18px,env(safe-area-inset-left));
+
+padding-right:max(18px,env(safe-area-inset-right));
+
+}
+
+body{
+
+padding-bottom:env(safe-area-inset-bottom);
+
+}
+
+}
+
+
+/* ==========================================================
+   LANDSCAPE PHONES
+==========================================================*/
+
+@media (max-height:550px) and (orientation:landscape){
+
+.hero{
+
+    min-height:700px;
+
+}
+
+.mobile-menu{
+
+    overflow-y:auto;
+
+    padding:40px;
+
+}
+
+}
+
+
+/* ==========================================================
+   ACCESSIBILITY
+==========================================================*/
+
+@media (prefers-reduced-motion:reduce){
+
+*{
+
+    animation:none !important;
+
+    transition:none !important;
+
+    scroll-behavior:auto !important;
+
+}
+
+}
+
+
+/* ==========================================================
+   HIGH DPI DISPLAYS
+==========================================================*/
+
+@media (-webkit-min-device-pixel-ratio:2),
+(min-resolution:192dpi){
+
+.project-img img{
+
+    image-rendering:auto;
+
+}
+
+}
+
+
+/* ==========================================================
+   PRINT
+==========================================================*/
+
+@media print{
+
+nav,
+.mobile-menu,
+#cursor-dot,
+#cursor-glow,
+#mesh-bg,
+#loader,
+.particle{
+
+    display:none !important;
+
+}
+
+body{
+
+    background:#fff;
+
+    color:#000;
+
+}
+
+section{
+
+    page-break-inside:avoid;
+
+}
+
+}
+
+
+
+/* ==========================================================
+   PART 7
+   Adaptive Animation System
+   (Place at the END of mobile.css)
+==========================================================*/
+
+
+/* ==========================================================
+   Animation Speed Variables
+==========================================================*/
+
+:root{
+
+    /* Desktop (Default) */
+
+    --mesh-speed:30s;
+    --particle-speed:12s;
+    --marquee-speed:20s;
+
+    --float-scale:1;
+    --blur-scale:1;
+
+}
+
+
+/* ==========================================================
+   Small Laptop
+==========================================================*/
+
+@media (max-width:1200px){
+
+:root{
+
+    --mesh-speed:36s;
+    --particle-speed:15s;
+    --marquee-speed:24s;
+
+    --float-scale:.90;
+    --blur-scale:.95;
+
+}
+
+}
+
+
+/* ==========================================================
+   Tablet
+==========================================================*/
+
+@media (max-width:768px){
+
+:root{
+
+    --mesh-speed:48s;
+    --particle-speed:20s;
+    --marquee-speed:34s;
+
+    --float-scale:.75;
+    --blur-scale:.85;
+
+}
+
+}
+
+
+/* ==========================================================
+   Phone
+==========================================================*/
+
+@media (max-width:480px){
+
+:root{
+
+    --mesh-speed:60s;
+    --particle-speed:26s;
+    --marquee-speed:46s;
+
+    --float-scale:.60;
+    --blur-scale:.75;
+
+}
+
+}
+
+
+/* ==========================================================
+   Very Small Phones
+==========================================================*/
+
+@media (max-width:360px){
+
+:root{
+
+    --mesh-speed:75s;
+    --particle-speed:32s;
+    --marquee-speed:60s;
+
+    --float-scale:.50;
+    --blur-scale:.70;
+
+}
+
+}
+
+
+/* ==========================================================
+   Mesh Background
+==========================================================*/
+
+.mesh,
+.mesh-bg,
+.mesh-gradient,
+#mesh-bg,
+.background-mesh{
+
+    animation-duration:var(--mesh-speed) !important;
+    animation-timing-function:linear !important;
+
+}
+
+
+/* ==========================================================
+   Floating Particles
+==========================================================*/
+
+.particle,
+.particles,
+.bg-particle,
+.floating-particle{
+
+    animation-duration:var(--particle-speed) !important;
+    animation-timing-function:ease-in-out !important;
+
+    transform:scale(var(--float-scale));
+
+}
+
+
+/* ==========================================================
+   Marquee / Skill Train
+==========================================================*/
+
+.marquee,
+.marquee-track,
+.skill-train,
+.skill-track,
+.ticker-track{
+
+    animation-duration:var(--marquee-speed) !important;
+    animation-timing-function:linear !important;
+
+}
+
+
+/* ==========================================================
+   Reduce Heavy Blur on Mobile
+==========================================================*/
+
+.glass,
+.card,
+.project-card,
+.experience-card,
+.accordion-panel,
+nav{
+
+    backdrop-filter:
+        blur(calc(18px * var(--blur-scale)));
+
+    -webkit-backdrop-filter:
+        blur(calc(18px * var(--blur-scale)));
+
+}
+
+
+/* ==========================================================
+   Mobile Performance Boost
+==========================================================*/
+
+@media (max-width:768px){
+
+.mesh,
+.mesh-bg,
+.background-mesh,
+.particle,
+.bg-particle{
+
+    will-change:transform;
+
+}
+
+}
+
+
+/* ==========================================================
+   Battery Saver
+==========================================================*/
+
+@media (prefers-reduced-motion:reduce){
+
+.mesh,
+.mesh-bg,
+.background-mesh,
+.particle,
+.bg-particle,
+.marquee,
+.skill-train{
+
+    animation-play-state:paused !important;
+
+}
+
+}
+
+/* ==========================================
+   Hero Paragraph Stability
+==========================================*/
+
+@media (max-width:768px){
+
+.hero p{
+
+    width:min(100%, 420px);
+    max-width:420px;
+
+    margin:24px auto 32px;
+
+    line-height:1.8;
+
+    min-height:4.2em;      /* Reserve space for ~3 lines */
+
+    display:block;
+
+    text-align:center;
+
+    transform:none !important;
+    animation:none !important;
+    will-change:auto;
+
+}
+
+}
+.mobile-menu{
+
+    position:fixed;
+    inset:0;
+
+    opacity:0;
+    visibility:hidden;
+    pointer-events: none;
+    transform:translateY(-20px);
+
+    transition:.4s ease;
+
+}
+
+.mobile-menu.active{
+
+    opacity:1;
+    visibility:visible;
+    pointer-events: auto;
+    transform:translateY(0);
+
+}
+/* AFTER (applies only on mobile) */
+@media (max-width:768px){
+
+.theme-switch{
+    width:44px;
+    height:24px;
+    transform:scale(.85);
+    transform-origin:center;
+}
+
+.theme-switch .slider{
+    height:70%;
+    border-radius:999px;
+}
+
+.theme-switch .circle{
+    width:16px;
+    height:16px;
+    left:3px;
+}
+
+.theme-switch input:checked + .slider .circle{
+    transform:translate(18px, -50%);
+}
+
+.hamburger{
+    width:40px;
+    height:40px;
+    border-radius:12px;
+}
+
+.hamburger span{
+    width:18px;
+    height:2px;
+}
+
+.hamburger span:nth-child(1){
+    transform:translateY(-6px);
+}
+
+.hamburger span:nth-child(3){
+    transform:translateY(6px);
+}
+
+}
+
+@media (max-width:480px){
+
+.theme-switch{
+    width:40px;
+    height:22px;
+    transform:scale(.8);
+}
+
+.theme-switch .circle{
+    width:14px;
+    height:14px;
+    left:3px;
+}
+
+.theme-switch input:checked + .slider .circle{
+    transform:translate(16px, -50%);
+}
+
+.hamburger{
+    width:38px;
+    height:38px;
+    border-radius:10px;
+}
+
+.hamburger span{
+    width:16px;
+}
+
+}
