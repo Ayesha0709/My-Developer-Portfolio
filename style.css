@@ -1124,7 +1124,7 @@ html[data-theme="light"] .particle:nth-child(18) { background: #8dffd5 !importan
       font-size: 2rem;
       font-weight: 400;
       color: var(--text);
-      margin-bottom: 12px;
+      margin-bottom: 5px;
       line-height: 1.15;
     }
 
@@ -1140,7 +1140,7 @@ html[data-theme="light"] .particle:nth-child(18) { background: #8dffd5 !importan
       font-size: 0.78rem;
       line-height: 1.6;
       color: var(--text2);
-      margin-bottom: 24px;
+      margin-bottom: 4px;
     }
 
     .acc-panel-details {
@@ -1242,7 +1242,7 @@ html[data-theme="light"] .particle:nth-child(18) { background: #8dffd5 !importan
     }
 
     .cert-accordion {
-      height: 660px;
+      height: 700px;
     }
 
     @media(max-width:900px) {
