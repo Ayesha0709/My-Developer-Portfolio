@@ -10,9 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap"
     rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400;500&display=swap"
     rel="stylesheet">
@@ -21,6 +21,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="mobile.css">
+  <link rel="stylesheet" href="about.css">
 </head>
 
 <body>
@@ -76,27 +77,27 @@
       <a href="#certifications">Certifications</a>
       <a href="#contact">Contact</a>
 
-      
-     
-    </div>
-   <div class="nav-actions">
 
-    <label class="theme-switch" for="theme-toggle">
+
+    </div>
+    <div class="nav-actions">
+
+      <label class="theme-switch" for="theme-toggle">
         <input type="checkbox" id="theme-toggle">
 
         <div class="slider">
-            <div class="circle"></div>
+          <div class="circle"></div>
         </div>
 
-    </label>
+      </label>
 
-    <div class="hamburger" id="hamburger">
+      <div class="hamburger" id="hamburger">
         <span></span>
         <span></span>
         <span></span>
+      </div>
+
     </div>
-
-</div>
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
@@ -111,18 +112,19 @@
     <a href="#contact" onclick="closeMobile()">Contact</a>
   </div>
 
+
   <div class="container">
     <section class="hero" id="home">
       <span class="reveal" style="color: var(--accent); letter-spacing: 2px;"> ✦ <span id="typewriter">FRESHER BCA
           STUDENT</span></span>
-      
-<h1 class="reveal">
-    <span id="decrypt-first">Ayesha</span><br>
-    <span id="decrypt-last" class="gradient-text">Khan</span>
-</h1>
+
+      <h1 class="reveal">
+        <span id="decrypt-first">Ayesha</span><br>
+        <span id="decrypt-last" class="gradient-text">Khan</span>
+      </h1>
 
 
-      <p class="reveal hero-float" style="max-width: 600px; margin-bottom: 30px;" >Crafting
+      <p class="reveal hero-float" style="max-width: 600px; margin-bottom: 30px;">Crafting
         clean, beautiful digital experiences with Python and modern web technologies.</p>
       <div class="reveal"><button class="btn btn-primary"
           onclick="sparkleBurst(event);document.getElementById('projects').scrollIntoView({behavior:'smooth'})">View
@@ -138,38 +140,452 @@
           React</span><span>✦ SQL</span><span>✦ Framer
           Motion</span></div>
     </div>
+
+
+    <!-- ==========================================
+ABOUT
+========================================== -->
     <section id="about">
-      <div
-        style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; min-height: 80vh; padding: 0 10%;">
-        <div class="reveal">
-          <h2 class="serif" style="font-size: 3.5rem; margin-bottom: 20px;">Building the <span
-              style="color: var(--accent);">future</span>.</h2>
-          <p style="max-width: 450px; line-height: 1.6;">BCA student with a keen eye for aesthetics.
-            I believe every line of code should contribute to an intuitive, seamless, and meaningful user experience.
-            Passionate about blending creativity with technology, I enjoy building digital experiences that are both
-            functional and engaging.
-          </p>
+      <div class="container">
+        <div class="section-label reveal">About Me</div>
+
+        <h2 class="section-title serif reveal">
+          Designing experiences,<br>
+          <span class="gradient-text">not just websites.</span>
+        </h2>
+
+        <div class="about-wrapper">
+          <div class="about-bg-word">AyeshaKhan</div>
+          <div class="about-spotlight"></div>
+
+          <!-- TOP ROW: portrait (left) + intro paragraph (right), side by side -->
+          <div class="about-top-row">
+            <div class="about-left reveal tilt-active">
+              <div class="about-image-wrapper">
+                <div class="floating-circle circle-one"></div>
+                <div class="floating-circle circle-two"></div>
+                <div class="floating-square"></div>
+
+                <div class="portrait-frame">
+                  <div class="portrait-inner">
+                    <img src="assets/profile.jpeg" alt="Ayesha Khan">
+                  </div>
+                </div>
+
+                <div class="about-glow"></div>
+
+                <div class="tech-orbit orbit-html">HTML</div>
+                <div class="tech-orbit orbit-css">CSS</div>
+                <div class="tech-orbit orbit-js">JS</div>
+                <div class="tech-orbit orbit-python">PY</div>
+              </div>
+            </div>
+
+            <div class="about-intro reveal">
+              <div class="about-heading">
+                Hi, I'm <span class="gradient-text">Ayesha Khan</span>
+              </div>
+
+              <p>
+                I'm a first-year BCA student with a passion for creating digital experiences that feel intuitive,
+                elegant, and purposeful. What started as curiosity about how websites work quickly evolved into a
+                genuine love for building products that combine thoughtful design with clean engineering.
+              </p>
+
+              <p>
+                I enjoy transforming ideas into polished interfaces using HTML, CSS, JavaScript, and Python while
+                constantly exploring modern UI design, AI-powered applications, cloud technologies, and full-stack
+                development.
+              </p>
+            </div>
+          </div>
+
+          <!-- EVERYTHING BELOW: centered in the viewport -->
+          <div class="about-right">
+            <div class="about-philosophy">
+              <div class="philosophy-card reveal card-stagger">
+                <div class="philosophy-icon">✦</div>
+                <div>
+                  <h3>Design First</h3>
+                  <p>Beautiful interfaces should never compromise usability. Every interaction deserves intention.</p>
+                </div>
+              </div>
+
+              <div class="philosophy-card reveal card-stagger">
+                <div class="philosophy-icon">⚡</div>
+                <div>
+                  <h3>Performance</h3>
+                  <p>Fast, responsive and accessible experiences across every device.</p>
+                </div>
+              </div>
+
+              <div class="philosophy-card reveal card-stagger">
+                <div class="philosophy-icon">🚀</div>
+                <div>
+                  <h3>Growth</h3>
+                  <p>Learning something new every week through projects, open source and experimentation.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-stats reveal">
+              <div class="about-stat">
+                <span class="count-up">4+</span>
+                <small>Projects</small>
+              </div>
+
+              <div class="about-stat">
+                <span class="count-up">10+</span>
+                <small>Certificates</small>
+              </div>
+
+              <div class="about-stat">
+                <span class="count-up">100%</span>
+                <small>Responsive</small>
+              </div>
+
+              <div class="about-stat">
+                <span class="count-up">∞</span>
+                <small>Curiosity</small>
+              </div>
+            </div>
+
+            <!-- CURRENTLY EXPLORING — radial orbit diagram -->
+            <div class="about-focus reveal">
+
+
+              <h3 class="explore-heading">Currently Exploring</h3>
+
+              <div class="orbit-diagram">
+                <div class="orbit-border"></div>
+                <div class="orbit-ring ring-outer"></div>
+                <div class="orbit-ring ring-inner"></div>
+                <div class="orbit-grid"></div>
+
+                <div class="orbit-cross"></div>
+
+                <div class="orbit-core-ring"></div>
+
+                <div class="orbit-marker marker-top"></div>
+                <div class="orbit-marker marker-right"></div>
+                <div class="orbit-marker marker-bottom"></div>
+                <div class="orbit-marker marker-left"></div>
+                <div class="orbit-halo"></div>
+
+                <div class="orbit-inner-glow"></div>
+
+                <div class="orbit-center-ring"></div>
+
+                <div class="orbit-reflection"></div>
+
+                <div class="orbit-edge-light"></div>
+
+                <div class="orbit-ticks"></div>
+
+                <div class="orbit-notch notch-top"></div>
+                <div class="orbit-notch notch-right"></div>
+                <div class="orbit-notch notch-bottom"></div>
+                <div class="orbit-notch notch-left"></div>
+
+                <div class="orbit-corner corner-tl"></div>
+                <div class="orbit-corner corner-tr"></div>
+                <div class="orbit-corner corner-bl"></div>
+                <div class="orbit-corner corner-br"></div>
+                <div class="orbit-hub">AK.dev</div>
+
+                <div class="orbit-rotator">
+
+                  <div class="orbit-spoke" style="--angle:0deg">
+                    <div class="orbit-arm"></div>
+                    <div class="orbit-node"></div>
+                    <div class="orbit-pill-slot">
+                      <div class="orbit-counter-static">
+                        <div class="orbit-counter-spin">
+                          <span class="orbit-pill">HTML</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="orbit-spoke" style="--angle:45deg">
+                    <div class="orbit-arm"></div>
+                    <div class="orbit-node"></div>
+                    <div class="orbit-pill-slot">
+                      <div class="orbit-counter-static">
+                        <div class="orbit-counter-spin">
+                          <span class="orbit-pill">CSS</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="orbit-spoke" style="--angle:90deg">
+                    <div class="orbit-arm"></div>
+                    <div class="orbit-node"></div>
+                    <div class="orbit-pill-slot">
+                      <div class="orbit-counter-static">
+                        <div class="orbit-counter-spin">
+                          <span class="orbit-pill">JS</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="orbit-spoke" style="--angle:135deg">
+                    <div class="orbit-arm"></div>
+                    <div class="orbit-node"></div>
+                    <div class="orbit-pill-slot">
+                      <div class="orbit-counter-static">
+                        <div class="orbit-counter-spin">
+                          <span class="orbit-pill">Python</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="orbit-spoke" style="--angle:180deg">
+                    <div class="orbit-arm"></div>
+                    <div class="orbit-node"></div>
+                    <div class="orbit-pill-slot">
+                      <div class="orbit-counter-static">
+                        <div class="orbit-counter-spin">
+                          <span class="orbit-pill">UI Engineering</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="orbit-spoke" style="--angle:225deg">
+                    <div class="orbit-arm"></div>
+                    <div class="orbit-node"></div>
+                    <div class="orbit-pill-slot">
+                      <div class="orbit-counter-static">
+                        <div class="orbit-counter-spin">
+                          <span class="orbit-pill">AI Tools</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="orbit-spoke" style="--angle:270deg">
+                    <div class="orbit-arm"></div>
+                    <div class="orbit-node"></div>
+                    <div class="orbit-pill-slot">
+                      <div class="orbit-counter-static">
+                        <div class="orbit-counter-spin">
+                          <span class="orbit-pill">APIs</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="orbit-spoke" style="--angle:315deg">
+                    <div class="orbit-arm"></div>
+                    <div class="orbit-node"></div>
+                    <div class="orbit-pill-slot">
+                      <div class="orbit-counter-static">
+                        <div class="orbit-counter-spin">
+                          <span class="orbit-pill">Cloud</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+                </div>
+              </div>
+
+              <!-- MOBILE SUBSTITUTE: Vertical Sonar Timeline.
+               Hidden by default; shown in place of the orbit
+               diagram below 600px via mobile.css. A glowing
+               "ping" travels down the center beam and briefly
+               lights up each node as it passes (driven by
+               sonar-timeline.js, matched to --sonar-duration). -->
+              <!-- <div class="sonar-timeline" id="sonarTimeline">
+                <div class="sonar-beam"></div>
+                <div class="sonar-ping"></div>
+
+                <div class="sonar-node side-right" style="--offset:0.06">
+                  <span class="sonar-dot"></span>
+                  <span class="sonar-connector"></span>
+                  <span class="sonar-label">HTML</span>
+                </div>
+
+                <div class="sonar-node side-left" style="--offset:0.19">
+                  <span class="sonar-dot"></span>
+                  <span class="sonar-connector"></span>
+                  <span class="sonar-label">CSS</span>
+                </div>
+
+                <div class="sonar-node side-right" style="--offset:0.32">
+                  <span class="sonar-dot"></span>
+                  <span class="sonar-connector"></span>
+                  <span class="sonar-label">JS</span>
+                </div>
+
+                <div class="sonar-node side-left" style="--offset:0.45">
+                  <span class="sonar-dot"></span>
+                  <span class="sonar-connector"></span>
+                  <span class="sonar-label">Python</span>
+                </div>
+
+                <div class="sonar-node side-right" style="--offset:0.58">
+                  <span class="sonar-dot"></span>
+                  <span class="sonar-connector"></span>
+                  <span class="sonar-label">UI Engineering</span>
+                </div>
+
+                <div class="sonar-node side-left" style="--offset:0.71">
+                  <span class="sonar-dot"></span>
+                  <span class="sonar-connector"></span>
+                  <span class="sonar-label">AI Tools</span>
+                </div>
+
+                <div class="sonar-node side-right" style="--offset:0.84">
+                  <span class="sonar-dot"></span>
+                  <span class="sonar-connector"></span>
+                  <span class="sonar-label">APIs</span>
+                </div>
+
+                <div class="sonar-node side-left" style="--offset:0.94">
+                  <span class="sonar-dot"></span>
+                  <span class="sonar-connector"></span>
+                  <span class="sonar-label">Cloud</span>
+                </div> -->
+            </div>
+          </div>
+
+
+          <!-- ==========================================
+                      LEARNING JOURNEY
+                     =========================================== -->
+
+          <div class="timeline-section reveal">
+
+            <h3 class="timeline-heading">
+              Learning Journey
+            </h3>
+
+            <div class="about-timeline">
+
+              <div class="timeline-progress"></div>
+
+              <!-- 2025 -->
+
+              <div class="timeline-item left">
+
+                <div class="timeline-year">
+                  2025
+                </div>
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                  <h4>Started Programming</h4>
+
+                  <p>
+                    Began learning HTML, CSS and Python while exploring modern web development.
+                  </p>
+
+                </div>
+
+              </div>
+
+              <!-- 2026 -->
+
+              <div class="timeline-item right">
+
+                <div class="timeline-content">
+
+                  <h4>Built My Portfolio</h4>
+
+                  <p>
+                    Designed and developed a premium personal portfolio while completing certifications.
+                  </p>
+
+                </div>
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-year">
+                  2026
+                </div>
+
+              </div>
+
+              <!-- TODAY -->
+
+              <div class="timeline-item left">
+
+                <div class="timeline-year">
+                  Today
+                </div>
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                  <h4>Growing Every Day</h4>
+
+                  <p>
+                    Building projects, exploring Artificial Intelligence, cloud technologies and preparing for
+                    internships.
+                  </p>
+
+                </div>
+
+              </div>
+
+              <!-- FUTURE -->
+
+              <div class="timeline-item right">
+
+                <div class="timeline-content">
+
+                  <h4>Long-Term Vision</h4>
+
+                  <p>
+                    Become a Full Stack Developer creating elegant, accessible and meaningful digital
+                    experiences.
+                  </p>
+
+                </div>
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-year">
+                  Future
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <blockquote class="about-quote tilt-active">
+            <p>"The smallest interaction often leaves the biggest impression."</p>
+            <span> &#9552; MY DESIGN PHILOSOPHY &#9552;</span>
+          </blockquote>
+
+
         </div>
 
-        <div class="reveal" style="display: flex; flex-wrap: wrap; gap: 20px;">
-          <div class="card"
-            style="flex: 1; min-width: 120px; text-align: center; border-left: 4px solid var(--accent);">
-            <div class="serif" style="font-size: 2.5rem; color: var(--accent);">10+</div>
-            <div style="font-size: 0.7rem; color: var(--muted);">Projects Built</div>
-          </div>
-          <div class="card"
-            style="flex: 1; min-width: 120px; text-align: center; border-left: 4px solid var(--accent);">
-            <div class="serif" style="font-size: 2.5rem; color: var(--accent);">9+</div>
-            <div style="font-size: 0.7rem; color: var(--muted);">Certifications</div>
-          </div>
-          <div class="card"
-            style="flex: 1; min-width: 120px; text-align: center; border-left: 4px solid var(--accent);">
-            <div class="serif" style="font-size: 2.5rem; color: var(--accent);">2+</div>
-            <div style="font-size: 0.7rem; color: var(--muted);">Years Coding</div>
-          </div>
+        <div class="about-ending reveal">
+          <h2>
+            Building experiences
+            <span class="gradient-text">people remember.</span>
+          </h2>
+          <p>Every project is another opportunity to learn, improve, and create something meaningful.</p>
         </div>
       </div>
     </section>
+
+
+
     <section id="skills">
       <h2 class="serif reveal" style="font-size: 2.5rem; margin-bottom: 40px;">Technical <span
           class="gradient-text">Toolkit</span></h2>
@@ -221,8 +637,8 @@
 
                 </a>
 
-                <a href="https://ayesha0709.github.io/My-Developer-Portfolio/" class="project-inline-arrow" target="_blank"
-                  onclick="event.stopPropagation();">
+                <a href="https://ayesha0709.github.io/My-Developer-Portfolio/" class="project-inline-arrow"
+                  target="_blank" onclick="event.stopPropagation();">
 
                   <i class="fas fa-arrow-right"></i>
 
@@ -355,6 +771,85 @@
             </div>
           </div>
         </div>
+
+        <div class="project-card featured reveal reveal-delay-3 tilt-active" onclick="openModal('p4')">
+
+          <div class="project-img" style="background:linear-gradient(135deg,#0f766e,#14b8a6);">
+
+            <img src="assets/resume-ai.png" alt="AI Resume Analyzer">
+
+            <div class="project-tag featured-tag">
+              ★ AI Powered Project
+            </div>
+
+          </div>
+
+          <div class="project-body">
+
+            <div class="project-title-row">
+
+              <div class="project-title">
+                AI Resume Analyzer
+              </div>
+
+              <div class="project-actions">
+
+                <a href="https://github.com/Ayesha0709" class="project-inline-github" target="_blank"
+                  onclick="event.stopPropagation();">
+
+                  <i class="fab fa-github"></i>
+
+                </a>
+
+                <a href="YOUR_LIVE_LINK" class="project-inline-arrow" target="_blank"
+                  onclick="event.stopPropagation();">
+
+                  <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <p class="project-desc">
+              An AI-powered resume analyzer that evaluates ATS compatibility,
+              identifies missing skills, provides intelligent suggestions,
+              and helps students create stronger resumes.
+            </p>
+
+            <div class="project-pills">
+              <span class="pill">Python</span>
+              <span class="pill">Flask</span>
+              <span class="pill">OpenAI</span>
+              <span class="pill">AI</span>
+            </div>
+
+            <div class="project-metrics">
+
+              <div class="metric">
+                <div class="metric-val">AI</div>
+                <div class="metric-label">Analysis</div>
+              </div>
+
+              <div class="metric">
+                <div class="metric-val">ATS</div>
+                <div class="metric-label">Optimized</div>
+              </div>
+
+              <div class="metric">
+                <div class="metric-val">PDF</div>
+                <div class="metric-label">Support</div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
       </div>
     </section>
 
@@ -708,67 +1203,67 @@
 
 
         <div class="accordion-panel reveal">
-  <div class="acc-collapsed">
-    <div class="acc-logo-frame">
-      <i class="fas fa-graduation-cap" style="font-size:1.4rem;"></i>
-    </div>
-  </div>
+          <div class="acc-collapsed">
+            <div class="acc-logo-frame">
+              <i class="fas fa-graduation-cap" style="font-size:1.4rem;"></i>
+            </div>
+          </div>
 
-  <div class="acc-expanded">
-    <div class="acc-expand-img"
-      style="background:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=900&h=700&fit=crop&auto=format') center/cover no-repeat;">
-    </div>
+          <div class="acc-expanded">
+            <div class="acc-expand-img"
+              style="background:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=900&h=700&fit=crop&auto=format') center/cover no-repeat;">
+            </div>
 
-    <div class="acc-expand-info">
+            <div class="acc-expand-info">
 
-      <div class="acc-info-header">
-        <span class="acc-panel-tag">Certification</span>
-        <span class="acc-panel-date">2026</span>
-      </div>
+              <div class="acc-info-header">
+                <span class="acc-panel-tag">Certification</span>
+                <span class="acc-panel-date">2026</span>
+              </div>
 
-      <div class="acc-panel-title">The Complete Web Development Bootcamp</div>
+              <div class="acc-panel-title">The Complete Web Development Bootcamp</div>
 
-      <div class="acc-panel-sub">Udemy</div>
+              <div class="acc-panel-sub">Udemy</div>
 
-      <p class="acc-panel-desc cert-desc-compact">
-        Completed a comprehensive web development bootcamp, building responsive websites and full-stack applications using modern technologies.
-      </p>
+              <p class="acc-panel-desc cert-desc-compact">
+                Completed a comprehensive web development bootcamp, building responsive websites and full-stack
+                applications using modern technologies.
+              </p>
 
-      <div class="acc-panel-pills">
-        <span class="ap-pill">HTML5</span>
-        <span class="ap-pill">CSS3</span>
-        <span class="ap-pill">JavaScript</span>
-        <span class="ap-pill">Node.js</span>
-        <span class="ap-pill">Express</span>
-        <span class="ap-pill">MongoDB</span>
-      </div>
+              <div class="acc-panel-pills">
+                <span class="ap-pill">HTML5</span>
+                <span class="ap-pill">CSS3</span>
+                <span class="ap-pill">JavaScript</span>
+                <span class="ap-pill">Node.js</span>
+                <span class="ap-pill">Express</span>
+                <span class="ap-pill">MongoDB</span>
+              </div>
 
-      <div class="acc-panel-metrics">
-        <div>
-          <div class="ap-metric-val">Udemy</div>
-          <div class="ap-metric-label">Platform</div>
+              <div class="acc-panel-metrics">
+                <div>
+                  <div class="ap-metric-val">Udemy</div>
+                  <div class="ap-metric-label">Platform</div>
+                </div>
+
+                <div>
+                  <div class="ap-metric-val">Certificate</div>
+                  <div class="ap-metric-label">Type</div>
+                </div>
+
+                <div>
+                  <div class="ap-metric-val">Completed</div>
+                  <div class="ap-metric-label">Status</div>
+                </div>
+              </div>
+
+              <a href="https://springboard.udemy.com/certificate/UC-b5690ea0-014f-4947-ab85-554357fac172/"
+                target="_blank" class="acc-panel-verify">
+                Verify
+              </a>
+
+            </div>
+          </div>
         </div>
-
-        <div>
-          <div class="ap-metric-val">Certificate</div>
-          <div class="ap-metric-label">Type</div>
-        </div>
-
-        <div>
-          <div class="ap-metric-val">Completed</div>
-          <div class="ap-metric-label">Status</div>
-        </div>
-      </div>
-
-      <a href="https://springboard.udemy.com/certificate/UC-b5690ea0-014f-4947-ab85-554357fac172/"
-         target="_blank"
-         class="acc-panel-verify">
-        Verify
-      </a>
-
-    </div>
-  </div>
-</div>
 
 
         <div class="accordion-panel reveal">

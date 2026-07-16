@@ -632,7 +632,9 @@
 
     .projects-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+    
+    align-items:start;
       gap: 24px;
     }
 
@@ -2131,3 +2133,12 @@ input:checked + .slider .circle{
       font-style: italic;
       margin-bottom: 20px;
     }
+
+
+    /* =====================================================
+   PREMIUM ABOUT SECTION V2
+   Matches Portfolio Card System
+===================================================== */
+
+
+ 

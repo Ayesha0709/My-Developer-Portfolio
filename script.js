@@ -152,109 +152,412 @@ hamburger.addEventListener("click", () => {
 
 
 
-  const sound = document.getElementById("decryptSound");
+  
+  /* ============================================================
+   CINEMATIC PER-LETTER DECRYPT
+   Premium Portfolio Animation
+============================================================ */
 
-const chars =
-"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+const first = document.getElementById("decrypt-first");
+const last = document.getElementById("decrypt-last");
 
-function decrypt(element, finalText) {
+const sound = document.getElementById("decryptSound");
 
-    let progress = 0;
-    const duration = 1800; // milliseconds
+if (sound) sound.volume = 0.08;
 
-    cancelAnimationFrame(element.animationFrame);
+const RANDOM =
+"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
-    const start = performance.now();
+function createLetters(element,text){
 
-    function animate(now) {
+    element.innerHTML="";
 
-        const elapsed = now - start;
+    [...text].forEach(letter=>{
 
-        progress = Math.min(elapsed / duration, 1);
+        const span=document.createElement("span");
 
-        // easeInOutCubic
-        const eased =
-            progress < 0.5
-                ? 4 * progress * progress * progress
-                : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+        span.className="decrypt-letter";
 
-        const revealCount =
-            Math.floor(eased * finalText.length);
+        span.dataset.final=letter;
 
-if (revealCount > lastReveal) {
+        span.textContent=letter===" " ? " " : RANDOM[Math.floor(Math.random()*RANDOM.length)];
 
-    sound.currentTime = 0;
+        element.appendChild(span);
 
-    sound.play().catch(() => {});
-
-    lastReveal = revealCount;
+    });
 
 }
 
+function animateWord(element,text,startDelay=0){
 
-        element.textContent = finalText
-            .split("")
-            .map((letter, index) => {
+    if(!element) return;
 
-                if (letter === " ") return " ";
+    createLetters(element,text);
 
-                if (index < revealCount)
-                    return finalText[index];
+    const letters=[...element.querySelectorAll(".decrypt-letter")];
 
-                return chars[
-                    Math.floor(Math.random() * chars.length)
+    const start=performance.now()+startDelay;
+
+    const stagger=85;
+
+    const revealTime=700;
+
+    function frame(now){
+
+        let finished=true;
+
+        letters.forEach((letter,index)=>{
+
+            const target=letter.dataset.final;
+
+            if(target===" ") return;
+
+            const elapsed=now-start-index*stagger;
+
+            if(elapsed<0){
+
+                finished=false;
+
+                return;
+
+            }
+
+            const progress=Math.min(elapsed/revealTime,1);
+
+            if(progress<1){
+
+                finished=false;
+
+                letter.textContent=
+                RANDOM[
+                    Math.floor(Math.random()*RANDOM.length)
                 ];
 
-            })
-            .join("");
+                const ease=
+                1-Math.pow(1-progress,3);
 
-        if (progress < 1) {
+                letter.style.opacity=.25+.75*ease;
 
-            element.animationFrame =
-                requestAnimationFrame(animate);
+                letter.style.filter=
+                `blur(${6*(1-ease)}px)`;
 
-        } else {
+                letter.style.transform=
+                `translateY(${10*(1-ease)}px)`;
 
-            element.textContent = finalText;
+                letter.style.textShadow=
+                `0 0 ${20*(1-ease)}px rgba(255,185,205,.35)`;
+
+            }
+
+            else{
+
+                if(letter.textContent!==target){
+
+                    letter.textContent=target;
+
+                    letter.classList.add("revealed");
+
+                    if(sound){
+
+                        sound.currentTime=0;
+
+                        sound.play().catch(()=>{});
+
+                    }
+
+                }
+
+            }
+
+        });
+
+        if(!finished){
+
+            requestAnimationFrame(frame);
+
+        }
+
+        else{
+
+            sweep(element);
 
         }
 
     }
 
-    element.animationFrame =
-        requestAnimationFrame(animate);
-sound.volume = 0.19;
-let lastReveal = -1;
+    requestAnimationFrame(frame);
+
 }
 
-  
+function sweep(element){
 
-const firstName = document.getElementById("decrypt-first");
-const lastName = document.getElementById("decrypt-last");
+    element.classList.remove("shine");
+
+    void element.offsetWidth;
+
+    element.classList.add("shine");
+
+}
+
+/* ------------------------
+   Initial
+------------------------ */
 
 window.addEventListener("load",()=>{
 
-    decrypt(firstName,"Ayesha");
+    animateWord(first,"Ayesha");
 
-    setTimeout(()=>{
-
-        decrypt(lastName,"Khan");
-
-    },250);
+    animateWord(last,"Khan",350);
 
 });
-[firstName,lastName].forEach(el=>{
+
+/* ------------------------
+   Replay
+------------------------ */
+
+[first,last].forEach(el=>{
+
+    if(!el) return;
 
     el.addEventListener("mouseenter",()=>{
 
-        decrypt(firstName,"Ayesha");
+        animateWord(first,"Ayesha");
 
-        decrypt(lastName,"Khan");
+        animateWord(last,"Khan",180);
 
     });
 
 });
 
 
+/* ==========================================
+   REVEAL ANIMATION (Intersection Observer)
+========================================== */
+const revealElements = document.querySelectorAll(".reveal");
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+      }
+    });
+  },
+  { threshold: 0.15 }
+);
+
+revealElements.forEach((el) => {
+  revealObserver.observe(el);
+});
 
 
+
+/*=========================================================
+   ABOUT SECTION — CLEAN CONSOLIDATED SCRIPT
+   Delete every "ABOUT SECTION — PART 1..6" block from
+   script.js and paste this single block in their place.
+=========================================================*/
+
+(() => {
+
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* -------------------------------------------------
+     Reveal-on-scroll for all About sub-sections
+  ------------------------------------------------- */
+
+  const revealTargets = document.querySelectorAll(
+    ".about-wrapper, .about-intro, .about-philosophy, .philosophy-card, " +
+    ".about-stats, .about-stat, .about-focus, .about-quote, " +
+    ".about-timeline, .timeline-item, .about-ending"
+  );
+
+  if (prefersReduced) {
+    revealTargets.forEach(el => el.classList.add("visible"));
+  } else {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -80px 0px" });
+
+    revealTargets.forEach(el => revealObserver.observe(el));
+  }
+
+  /* -------------------------------------------------
+     Stagger delays
+  ------------------------------------------------- */
+
+  document.querySelectorAll(".philosophy-card").forEach((card, i) => {
+    card.style.transitionDelay = `${i * 120}ms`;
+  });
+
+  document.querySelectorAll(".about-stat").forEach((card, i) => {
+    card.style.transitionDelay = `${i * 90}ms`;
+  });
+
+  document.querySelectorAll(".timeline-item").forEach((item, i) => {
+    item.style.transitionDelay = `${i * 160}ms`;
+  });
+
+  /* -------------------------------------------------
+     Heading letter-by-letter reveal
+  ------------------------------------------------- */
+
+  const heading = document.querySelector(".about-heading");
+  if (heading && !heading.dataset.split) {
+    const text = heading.textContent.trim();
+    heading.innerHTML = "";
+    heading.dataset.split = "true";
+    [...text].forEach((letter, i) => {
+      const span = document.createElement("span");
+      span.textContent = letter === " " ? "\u00A0" : letter;
+      span.style.animationDelay = `${i * 45}ms`;
+      heading.appendChild(span);
+    });
+  }
+
+  /* -------------------------------------------------
+     Animated stat counters
+     Skips non-numeric values like "∞" instead of
+     producing "NaN+".
+  ------------------------------------------------- */
+
+  const counters = document.querySelectorAll(".about-stat .count-up");
+
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+
+      const counter = entry.target;
+      counterObserver.unobserve(counter);
+
+      const raw = counter.textContent.trim();
+      const numMatch = raw.match(/\d+/);
+
+      if (!numMatch) return; // e.g. "∞" — leave untouched
+
+      const target = parseInt(numMatch[0], 10);
+      const suffix = raw.replace(numMatch[0], "");
+
+      if (prefersReduced) {
+        counter.textContent = target + suffix;
+        return;
+      }
+
+      const duration = 1400;
+      let startTime = null;
+
+      function tick(time) {
+        if (!startTime) startTime = time;
+        const progress = Math.min((time - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        counter.textContent = Math.floor(eased * target) + suffix;
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+
+      requestAnimationFrame(tick);
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(c => counterObserver.observe(c));
+
+  /* -------------------------------------------------
+     Portrait tilt — hover only, no scroll loop
+     (this replaces the old floating()/parallax loops
+     that were fighting each other and drifting)
+  ------------------------------------------------- */
+
+  const portrait = document.querySelector(".about-image-wrapper");
+  const portraitImg = portrait ? portrait.querySelector("img") : null;
+
+  if (portrait && portraitImg && !prefersReduced) {
+    portrait.addEventListener("mousemove", (e) => {
+      const rect = portrait.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const rotateY = ((x / rect.width) - 0.5) * 12;
+      const rotateX = ((y / rect.height) - 0.5) * -12;
+      portraitImg.style.transform =
+        `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px) scale(1.03)`;
+    });
+
+    portrait.addEventListener("mouseleave", () => {
+      portraitImg.style.transform = "";
+    });
+  }
+
+  /* -------------------------------------------------
+     Spotlight mouse-follow
+  ------------------------------------------------- */
+
+  const wrapper = document.querySelector(".about-wrapper");
+  const spotlight = document.querySelector(".about-spotlight");
+
+  if (wrapper && spotlight && !prefersReduced) {
+    wrapper.addEventListener("mousemove", (e) => {
+      const rect = wrapper.getBoundingClientRect();
+      spotlight.style.left = `${e.clientX - rect.left - 160}px`;
+      spotlight.style.top = `${e.clientY - rect.top - 160}px`;
+    });
+  }
+
+  /* -------------------------------------------------
+     Philosophy card tilt
+  ------------------------------------------------- */
+
+  if (!prefersReduced) {
+    document.querySelectorAll(".philosophy-card").forEach(card => {
+      card.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const rotateX = (rect.height / 2 - y) / 16;
+        const rotateY = (x - rect.width / 2) / 16;
+        card.style.transform =
+          `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
+      });
+      card.addEventListener("mouseleave", () => {
+        card.style.transform = "";
+      });
+    });
+  }
+
+  /* -------------------------------------------------
+     Timeline progress line + item reveal
+  ------------------------------------------------- */
+
+  const timeline = document.querySelector(".about-timeline");
+  const progressFill = document.querySelector(".timeline-progress");
+
+  if (timeline && progressFill) {
+    function updateTimelineProgress() {
+      const rect = timeline.getBoundingClientRect();
+      const vh = window.innerHeight;
+      const visible = vh - rect.top;
+      const total = rect.height + vh;
+      const percent = Math.max(0, Math.min(1, visible / total));
+      progressFill.style.height = `${percent * 100}%`;
+    }
+    window.addEventListener("scroll", () => requestAnimationFrame(updateTimelineProgress), { passive: true });
+    updateTimelineProgress();
+  }
+
+  const timelineItems = document.querySelectorAll(".timeline-item");
+  const timelineObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add("visible");
+    });
+  }, { threshold: 0.35 });
+  timelineItems.forEach(item => timelineObserver.observe(item));
+
+  /* -------------------------------------------------
+     NOTE: the "Currently Exploring" orbit diagram needs
+     no JS at all — its rotation, counter-rotation, and
+     pause-on-hover are all handled in CSS.
+  ------------------------------------------------- */
+
+})();
