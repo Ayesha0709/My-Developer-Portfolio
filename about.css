@@ -4048,3 +4048,20 @@ background-color: #222;
   }
 }
 
+/* Failsafe: force all reveal-based elements visible
+   regardless of whether the IntersectionObserver fires */
+.reveal,
+.about-wrapper,
+.about-intro,
+.about-philosophy,
+.philosophy-card,
+.about-stats,
+.about-stat,
+.about-focus,
+.about-quote,
+.about-timeline,
+.timeline-item,
+.about-ending{
+  opacity:1 !important;
+  transform:none !important;
+}
