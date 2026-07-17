@@ -84,8 +84,9 @@
 }
 
 .about-image-wrapper {
-  width: 360px;
-  height: 440px;
+  width: min(360px, 88vw);
+  aspect-ratio: 360 / 440;
+  height: auto;
   position: relative;
   display: flex;
   justify-content: center;
@@ -131,8 +132,9 @@
 }
 
 .portrait-frame {
-  width: 300px;
-  height: 380px;
+  width: min(300px, 82vw);
+  aspect-ratio: 300 / 380;
+  height: auto;
   border-radius: 35px;
   overflow: hidden;
   position: relative;
@@ -3720,18 +3722,36 @@ background-color: #222;
 
 @media (max-width: 600px) {
 
+  .about-wrapper {
+    gap: 36px;
+    margin: 40px auto 0;
+    padding: 20px 0 0;
+  }
+
+  .about-top-row {
+    gap: 32px;
+  }
+
   .about-image-wrapper {
-    width: 260px;
-    height: 340px;
+    width: min(260px, 86vw);
+    height: auto;
   }
 
   .portrait-frame {
-    width: 220px;
-    height: 290px;
+    width: min(220px, 76vw);
+    height: auto;
   }
 
   .about-heading {
     font-size: 2.2rem;
+  }
+
+  .about-intro {
+    width: 100%;
+  }
+
+  .about-intro p {
+    font-size: 0.95rem;
   }
 
   .about-philosophy {
@@ -3739,8 +3759,12 @@ background-color: #222;
     gap: 20px;
   }
 
+  .about-right {
+    gap: 36px;
+  }
+
   .about-stats {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 14px;
   }
 
@@ -3786,9 +3810,17 @@ background-color: #222;
     display: none;
   }
 
+  .about-bg-word {
+    font-size: clamp(3rem, 12vw, 4.8rem);
+    top: 3%;
+    opacity: 0.06;
+  }
+
   .orbit-diagram {
-    --orbit-size: 280px;
-    --orbit-radius: 100px;
+    --radar-size: min(86vw, 300px);
+    width: min(86vw, 300px);
+    height: min(86vw, 300px);
+    margin: 0 auto;
   }
 
   .orbit-hub {
@@ -4048,19 +4080,3 @@ background-color: #222;
   }
 }
 
-html body #about,
-html body #about *{
-  color: var(--text, #f5f5f5) !important;
-  -webkit-text-fill-color: unset !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  transform: none !important;
-}
-
-html body #about .gradient-text{
-  background: var(--rose-gold-gradient, linear-gradient(90deg, #DA7D91, #f0b9be)) !important;
-  -webkit-background-clip: text !important;
-  background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  color: transparent !important;
-}
