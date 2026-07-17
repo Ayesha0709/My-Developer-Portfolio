@@ -4048,20 +4048,19 @@ background-color: #222;
   }
 }
 
-/* Failsafe: force all reveal-based elements visible
-   regardless of whether the IntersectionObserver fires */
-.reveal,
-.about-wrapper,
-.about-intro,
-.about-philosophy,
-.philosophy-card,
-.about-stats,
-.about-stat,
-.about-focus,
-.about-quote,
-.about-timeline,
-.timeline-item,
-.about-ending{
-  opacity:1 !important;
-  transform:none !important;
+html body #about,
+html body #about *{
+  color: var(--text, #f5f5f5) !important;
+  -webkit-text-fill-color: unset !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
+html body #about .gradient-text{
+  background: var(--rose-gold-gradient, linear-gradient(90deg, #DA7D91, #f0b9be)) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
 }
