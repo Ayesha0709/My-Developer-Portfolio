@@ -37,7 +37,7 @@
 
 .about-bg-word {
   position: absolute;
-  top: 55%;
+  top: 5%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -48,14 +48,14 @@
   opacity: 0.09;
   pointer-events: none;
   user-select: none;
-  z-index: 0;
+  z-index: -1;
   letter-spacing: 0.05em;
   line-height: 1;
   white-space: nowrap;
 }
 
 [data-theme="dark"] .about-bg-word {
-  opacity: 0.09;
+  opacity: .09;
 }
 
 /* ===============================
@@ -164,8 +164,8 @@
   height: 120%;
   top: -10%;
   left: -10%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(218, 125, 145, 0.2), transparent 70%);
+  border-radius: 70%;
+  background: radial-gradient(circle, rgba(218, 125, 145, 0.624), transparent 70%);
   z-index: 1;
   pointer-events: none;
   animation: aboutGlowPulse 3s ease-in-out infinite;
@@ -267,21 +267,97 @@
   gap: 70px;
 }
 
+
 #about .about-heading {
+  font-family: 'DM Serif Display', cursive;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 700;
+  
+
+  background: linear-gradient(
+    90deg,
+    #e08095 0%,
+    #fd5d7f 15%,
+    #f1a6b6 30%,
+    #fff8d6 45%,
+    #ed6280 60%,
+    #b65167 80%,
+    #6a2e3b 100%
+  );
+
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+
+  animation: goldShine 5s linear infinite;
+}
+
+@keyframes goldShine {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+
+}
+/* Desktop */
+#about .about-heading {
+  animation: goldShine 6s linear infinite;
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+  #about .about-heading {
+    animation-duration: 8s;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  #about .about-heading {
+    animation-duration: 60s;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  #about .about-heading {
+    animation-duration: 60s;
+  }
+}
+
+
+/* #about .about-heading {
+    font-family: 'DM Serif Display' , cursive;
+    color: linear-gradient(
+        135deg,
+        #ffd6e0 0%,
+        #e795a7 35%,
+        #DA7D91 65%,
+        #b65f76 100%
+    );
+
+
+
+
   font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 700;
   line-height: 1.2;
-}
+} */
 
 #about .about-heading::before {
   content: "Hi, I'm";
   display: block;
-  font-family: var(--font-handwritten);
-  font-size: clamp(2rem, 3vw, 2.6rem);
-  color: var(--rose-gold-solid);
-  font-weight: 400;
-  margin-bottom: -5px;
-  transform: rotate(-3deg);
+  font-family: 'Mrs Saint Delafield';
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  color: var(--rose-gold-solid, #DA7D91);
+  font-weight: 800;
+  /* line-height: 1; */
+  /* margin-bottom: -10px; */
+  /* transform: rotate(-4deg); */
   transform-origin: left;
 }
 
@@ -297,7 +373,7 @@
 #about .about-intro p {
   font-size: 1.05rem;
   line-height: 1.75;
-  color: var(--text-secondary);
+  /* color: var(--text-secondary); */
   margin-bottom: 24px;
 }
 
@@ -381,9 +457,9 @@
   box-shadow: 0 20px 60px rgba(218, 125, 145, 0.1);
 }
 
-.philosophy-icon {
+/* .philosophy-icon {
   
-  /* width: 50px;
+  width: 50px;
   height: 50px;
   border-radius: 50%;
   border: 1.5px solid var(--rose-gold-solid);
@@ -393,13 +469,54 @@
   font-size: 1.8rem;
   color: var(--rose-gold-solid);
   margin-bottom: 18px;
-  box-shadow: 0 0 15px rgba(226, 151, 144, 0.2); */
+  box-shadow: 0 0 15px rgba(226, 151, 144, 0.2);
 
   font-size: 1.8rem;
   margin-bottom: 18px;
   display: block;
   border: 1.5px solid var(--rose-gold-solid);
+} */
+
+
+.philosophy-icon{
+  width:64px;
+  height:64px;
+  border-radius:50%;
+  border:1.5px solid #DA7D91;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.8rem;
+  color:var(--rose-gold-solid);
+  margin:0 auto 18px;
+  box-shadow:
+    0 0 14px rgba(226,151,144,.35),
+    inset 0 0 12px rgba(226,151,144,.15);
+  animation:iconGlowPulse 3.5s ease-in-out infinite;
+  transition:transform .35s ease, box-shadow .35s ease;
 }
+
+.philosophy-card:hover .philosophy-icon{
+  transform:scale(1.08);
+  box-shadow:
+    0 0 26px rgba(226,151,144,.55),
+    inset 0 0 18px rgba(226,151,144,.22);
+}
+
+@keyframes iconGlowPulse{
+  0%,100%{
+    box-shadow:
+      0 0 14px #DA7D91,
+      inset 0 0 12px rgba(226, 151, 144, 0.888);
+  }
+  50%{
+    box-shadow:
+      0 0 22px rgba(230, 133, 124, 0.714),
+      inset 0 0 16px rgba(226, 151, 144, 0.819);
+  }
+}
+
+
 
 .philosophy-card h3 {
   font-family: 'DM Serif Display', serif;
@@ -474,9 +591,7 @@
 /* ===============================
    CURRENTLY EXPLORING — ORBIT DIAGRAM
 =============================== */
- .explore-heading{
-  color:#DA7D91;
- }
+
  
  .orbit-border{
     position: absolute;
@@ -2429,7 +2544,7 @@ background-color: #222;
 
     font-size:.82rem;
 
-    font-weight:600;
+    font-weight:200;
 
     letter-spacing:.04em;
 
@@ -2805,7 +2920,7 @@ background-color: #222;
 
         padding:6px 10px;
 
-        font-size:.65rem;
+        font-size:.82rem;
 
     }
 
@@ -2820,6 +2935,7 @@ background-color: #222;
 =============================== */
 
 .about-quote {
+    position:relative;
   color:#DA7D91;
   text-align: center;
   max-width: 750px;
@@ -2927,7 +3043,7 @@ background-color: #222;
     text-align:center;
 
     font-family:'DM Serif Display',serif;
-    color:#DA7D91;
+   
 
     font-size:clamp(2.8rem,6vw,5rem);
 
@@ -3104,6 +3220,47 @@ background-color: #222;
    CONTENT
 ========================================================== */
 
+.timeline-section{
+  margin-bottom:150px;
+}
+
+@media (max-width:768px){
+
+  .timeline-section{
+    margin-bottom:60px;
+  }
+
+}
+
+@media (max-width:480px){
+
+  .timeline-section{
+    margin-bottom:48px;
+  }
+
+}
+.timeline-section{
+  position:relative;
+  padding-bottom:50px;
+}
+
+.timeline-section::after{
+  content:"";
+  position:absolute;
+  /* bottom:0; */
+  left:50%;
+  transform:translateX(-50%);
+  width:100vw;
+  height:2px;
+  background:var(--accent);
+  box-shadow:
+    0 0 8px rgba(218,125,145,.55),
+    0 0 20px rgba(218,125,145,.30);
+}
+
+
+
+
 .timeline-content{
 
     max-width:430px;
@@ -3128,8 +3285,72 @@ background-color: #222;
     color:var(--paragraph-color);
 
 }
+.timeline-content{
+  background:rgba(197, 162, 162, 0.519);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border:1px solid #8f5d68;
+  border-radius:20px;
+  padding:24px 28px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.10),
+    0 10px 30px rgba(0,0,0,.25);
+}
 
+[data-theme="light"] .timeline-content{
+  background:rgba(255,255,255,.35);
+  border-color:rgba(39, 41, 176, 0.614);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.60),
+    0 10px 30px rgba(97,99,230,.10);
+}
+@media (max-width:768px){
 
+  .about-timeline{
+    overflow:visible;
+    padding-right:16px;
+    box-sizing:border-box;
+  }
+
+  .timeline-item{
+    grid-template-columns:40px minmax(0,1fr);
+    overflow:visible;
+    padding-right:4px;
+    box-sizing:border-box;
+  }
+
+  .timeline-content{
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    box-sizing:border-box;
+    overflow:visible;
+    padding:16px 18px;
+  }
+
+  .timeline-content h4,
+  .timeline-content p{
+    text-align: center;
+    max-width:100%;
+    overflow-wrap:break-word;
+    word-break:break-word;
+  }
+
+}
+
+@media (max-width:480px){
+
+  .timeline-item{
+    grid-template-columns:32px minmax(0,1fr);
+  }
+
+  .timeline-content{
+    padding:14px 16px;
+  }
+.timeline-content h4,
+  .timeline-content p{
+    text-align: center;}
+}
 /* ==========================================================
    ALTERNATING LAYOUT
 ========================================================== */
@@ -3395,6 +3616,39 @@ background-color: #222;
   color: var(--paragraph-color);
   line-height: 1.8;
 }
+.about-ending p{
+  position:relative;
+  padding-bottom:50px;
+}
+
+.about-ending p::after{
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:100vw;
+  height:2px;
+  background:var(--accent);
+  box-shadow:
+    0 0 8px rgba(218,125,145,.55),
+    0 0 20px rgba(218,125,145,.30);
+}
+
+[data-theme="light"] .about-ending p::after{
+  background:linear-gradient(
+    90deg,
+    transparent,
+    var(--mesh-sec),
+    #8f96ff,
+    var(--green),
+    transparent
+  );
+  box-shadow:
+    0 0 10px rgba(97,99,230,.35),
+    0 0 22px rgba(142,29,187,.25);
+}
+
 
 /* ===============================
    RESPONSIVE: TABLET
@@ -3455,7 +3709,7 @@ background-color: #222;
   }
 
   .orbit-pill {
-    font-size: 0.65rem;
+    font-size: 0.82rem;
     padding: 8px 14px;
   }
 }

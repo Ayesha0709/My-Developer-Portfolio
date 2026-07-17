@@ -422,49 +422,75 @@ revealElements.forEach((el) => {
 
   /* -------------------------------------------------
      Animated stat counters
-     Skips non-numeric values like "∞" instead of
-     producing "NaN+".
+     Runs once on scroll into view, and replays every
+     time the card is hovered. Skips non-numeric values
+     like "∞".
   ------------------------------------------------- */
 
   const counters = document.querySelectorAll(".about-stat .count-up");
 
+  // Parse each counter's target number + suffix once,
+  // so we can replay the animation without losing the value.
+  counters.forEach(counter => {
+    const raw = counter.textContent.trim();
+    const numMatch = raw.match(/\d+/);
+
+    if (!numMatch) {
+      counter.dataset.static = "true"; // e.g. "∞"
+      return;
+    }
+
+    counter.dataset.target = numMatch[0];
+    counter.dataset.suffix = raw.replace(numMatch[0], "");
+  });
+
+  function animateCount(counter) {
+    if (counter.dataset.static) return;
+
+    const target = parseInt(counter.dataset.target, 10);
+    const suffix = counter.dataset.suffix;
+
+    if (prefersReduced) {
+      counter.textContent = target + suffix;
+      return;
+    }
+
+    // Cancel any animation already in progress on this counter
+    const runId = (counter._runId || 0) + 1;
+    counter._runId = runId;
+
+    const duration = 1400;
+    let startTime = null;
+
+    function tick(time) {
+      if (counter._runId !== runId) return;
+      if (!startTime) startTime = time;
+      const progress = Math.min((time - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      counter.textContent = Math.floor(eased * target) + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+
+    requestAnimationFrame(tick);
+  }
+
+  // Scroll-triggered — plays once when it first enters view
   const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
-
-      const counter = entry.target;
-      counterObserver.unobserve(counter);
-
-      const raw = counter.textContent.trim();
-      const numMatch = raw.match(/\d+/);
-
-      if (!numMatch) return; // e.g. "∞" — leave untouched
-
-      const target = parseInt(numMatch[0], 10);
-      const suffix = raw.replace(numMatch[0], "");
-
-      if (prefersReduced) {
-        counter.textContent = target + suffix;
-        return;
-      }
-
-      const duration = 1400;
-      let startTime = null;
-
-      function tick(time) {
-        if (!startTime) startTime = time;
-        const progress = Math.min((time - startTime) / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        counter.textContent = Math.floor(eased * target) + suffix;
-        if (progress < 1) requestAnimationFrame(tick);
-      }
-
-      requestAnimationFrame(tick);
+      counterObserver.unobserve(entry.target);
+      animateCount(entry.target);
     });
   }, { threshold: 0.5 });
 
   counters.forEach(c => counterObserver.observe(c));
 
+  // Hover-triggered — replays every time you hover the card
+  document.querySelectorAll(".about-stat").forEach(card => {
+    const counter = card.querySelector(".count-up");
+    if (!counter) return;
+    card.addEventListener("mouseenter", () => animateCount(counter));
+  });
   /* -------------------------------------------------
      Portrait tilt — hover only, no scroll loop
      (this replaces the old floating()/parallax loops
@@ -561,3 +587,5 @@ revealElements.forEach((el) => {
   ------------------------------------------------- */
 
 })();
+
+
