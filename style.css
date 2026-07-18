@@ -2106,7 +2106,10 @@ input:checked + .slider .circle{
          footer {
       padding: 35px 20px;
       text-align: center;
-      border-top: 1px solid var(--border);
+      border-top: 3px dashed #DA7D91;
+    }
+    html[data-theme="light"] footer{
+      border-top: 2px dashed rgb(136, 36, 229);
     }
 
     footer p {

@@ -3167,3 +3167,416 @@ nav{
 }
 
 }
+
+/* ==========================================
+   MOBILE.CSS
+   PART 10
+   About Section — Complete Mobile Overrides
+   Fills gaps not handled by about.css or
+   existing mobile.css PART 2
+   ========================================== */
+
+
+/* ==========================================
+   LARGE TABLETS (1024px)
+   ========================================== */
+
+@media (max-width:1024px){
+
+.about-wrapper{
+    gap:50px !important;
+    margin-top:60px !important;
+}
+
+.about-bg-word{
+    font-size:7rem !important;
+}
+
+}
+
+/* ==========================================
+   TABLETS (768px)
+   ========================================== */
+
+@media (max-width:768px){
+
+/* --- Overflow safety on all parents --- */
+.about-wrapper,
+.about-right{
+    overflow-x:hidden !important;
+}
+
+/* --- Wrapper & Spacing --- */
+
+.about-wrapper{
+    gap:40px !important;
+    margin-top:50px !important;
+    padding:20px 0 !important;
+}
+
+.about-bg-word{
+    font-size:5rem !important;
+    top:3% !important;
+    opacity:.06 !important;
+}
+
+.about-top-row{
+    gap:30px !important;
+}
+
+.about-right{
+    gap:50px !important;
+}
+
+.about-image-wrapper{
+    max-width:100% !important;
+}
+
+.portrait-frame{
+    max-width:100% !important;
+}
+
+.about-focus{
+    margin-top:80px !important;
+    overflow-x:hidden !important;
+}
+
+.explore-heading{
+    margin-bottom:50px !important;
+}
+
+.timeline-section{
+    margin-top:80px !important;
+}
+
+/* Orbit diagram: fill available width, clip overflow */
+.orbit-diagram{
+    --radar-size:min(460px, calc(100vw - 48px)) !important;
+    overflow:hidden !important;
+}
+
+.orbit-halo{
+    width:100% !important;
+    height:100% !important;
+}
+
+.orbit-diagram::before{
+    inset:-60px !important;
+}
+
+.about-quote{
+    padding:30px 16px 0 !important;
+}
+
+.about-ending{
+    padding:50px 0 30px !important;
+}
+
+.about-intro p{
+    font-size:.95rem !important;
+    line-height:1.75 !important;
+}
+
+.philosophy-card{
+    padding:28px 22px !important;
+}
+
+.about-stat span{
+    font-size:2.6rem !important;
+}
+
+}
+
+/* ==========================================
+   PHONES (480px)
+   ========================================== */
+
+@media (max-width:480px){
+
+/* --- Overflow safety on all parents --- */
+.about-wrapper,
+.about-right,
+.about-focus{
+    overflow-x:hidden !important;
+}
+
+/* --- Wrapper & Spacing --- */
+
+.about-wrapper{
+    gap:30px !important;
+    margin-top:40px !important;
+    padding:10px 0 !important;
+}
+
+.about-bg-word{
+    font-size:3.5rem !important;
+    opacity:.05 !important;
+}
+
+.about-top-row{
+    gap:24px !important;
+}
+
+.about-image-wrapper{
+    width:240px !important;
+    height:310px !important;
+    max-width:100% !important;
+}
+
+.portrait-frame{
+    width:200px !important;
+    height:260px !important;
+    border-radius:28px !important;
+}
+
+.about-right{
+    gap:40px !important;
+}
+
+.about-focus{
+    margin-top:60px !important;
+}
+
+.explore-heading{
+    margin-bottom:40px !important;
+    font-size:clamp(1.6rem,6vw,2.2rem) !important;
+}
+
+.timeline-section{
+    margin-top:60px !important;
+}
+
+/* Orbit diagram: use full viewport width, clip all overflow */
+.orbit-diagram{
+    --radar-size:min(360px, calc(100vw - 40px)) !important;
+    overflow:hidden !important;
+    max-width:100% !important;
+}
+
+.orbit-halo{
+    width:100% !important;
+    height:100% !important;
+}
+
+.orbit-diagram::before{
+    inset:-30px !important;
+}
+
+.orbit-border{
+    inset:-18px !important;
+}
+
+.about-quote{
+    padding:24px 14px 0 !important;
+    border-radius:18px !important;
+}
+
+.about-quote p{
+    font-size:clamp(1.1rem,4vw,1.4rem) !important;
+    line-height:1.6 !important;
+}
+
+.about-quote::before{
+    width:120px !important;
+}
+
+.about-ending{
+    padding:40px 0 20px !important;
+}
+
+.about-ending h2{
+    font-size:clamp(1.5rem,6vw,2.2rem) !important;
+}
+
+.about-ending p{
+    padding-bottom:40px !important;
+    font-size:.88rem !important;
+}
+
+.about-intro p{
+    font-size:.9rem !important;
+    line-height:1.7 !important;
+}
+
+.about-heading::before{
+    font-size:clamp(1.8rem,7vw,2.8rem) !important;
+}
+
+.philosophy-card{
+    padding:22px 18px !important;
+    border-radius:20px !important;
+}
+
+.philosophy-card h3{
+    font-size:1.1rem !important;
+}
+
+.philosophy-card p{
+    font-size:.82rem !important;
+    line-height:1.7 !important;
+}
+
+.philosophy-icon{
+    width:54px !important;
+    height:54px !important;
+    font-size:1.5rem !important;
+}
+
+.about-stats{
+    gap:12px !important;
+}
+
+.about-stat{
+    padding:28px 14px !important;
+    border-radius:20px !important;
+}
+
+.about-stat span{
+    font-size:2rem !important;
+}
+
+.about-stat small{
+    font-size:.65rem !important;
+}
+
+#about .section-label{
+    font-size:.7rem !important;
+}
+
+#about .section-title{
+    font-size:clamp(1.8rem,5vw,2.4rem) !important;
+}
+
+}
+
+/* ==========================================
+   SMALL PHONES (360px)
+   ========================================== */
+
+@media (max-width:360px){
+
+/* --- Overflow safety: strongest containment --- */
+.about-wrapper,
+.about-right,
+.about-focus{
+    overflow-x:hidden !important;
+}
+
+.about-wrapper{
+    gap:24px !important;
+    margin-top:30px !important;
+}
+
+.about-bg-word{
+    display:none !important;
+}
+
+.about-image-wrapper{
+    width:220px !important;
+    height:280px !important;
+}
+
+.portrait-frame{
+    width:180px !important;
+    height:240px !important;
+    border-radius:24px !important;
+    border-width:6px !important;
+}
+
+.about-right{
+    gap:30px !important;
+}
+
+.about-focus{
+    margin-top:40px !important;
+}
+
+.explore-heading{
+    margin-bottom:30px !important;
+    font-size:clamp(1.4rem,6vw,1.8rem) !important;
+}
+
+.timeline-section{
+    margin-top:40px !important;
+}
+
+/* Orbit diagram: scale to full viewport, clip everything */
+.orbit-diagram{
+    --radar-size:min(280px, calc(100vw - 32px)) !important;
+    overflow:hidden !important;
+    max-width:100% !important;
+}
+
+.orbit-halo{
+    width:100% !important;
+    height:100% !important;
+}
+
+.orbit-diagram::before{
+    inset:-20px !important;
+}
+
+.orbit-border{
+    inset:-14px !important;
+}
+
+.about-quote{
+    padding:20px 12px 0 !important;
+    border-radius:14px !important;
+}
+
+.about-quote p{
+    font-size:1.1rem !important;
+    line-height:1.55 !important;
+}
+
+.about-ending{
+    padding:30px 0 16px !important;
+}
+
+.about-ending h2{
+    font-size:1.4rem !important;
+    line-height:1.2 !important;
+}
+
+.about-ending p{
+    padding-bottom:30px !important;
+    font-size:.82rem !important;
+}
+
+.philosophy-card{
+    padding:20px 14px !important;
+    border-radius:16px !important;
+}
+
+.philosophy-card h3{
+    font-size:1rem !important;
+}
+
+.philosophy-card p{
+    font-size:.78rem !important;
+    line-height:1.65 !important;
+}
+
+.about-stat{
+    padding:22px 12px !important;
+    border-radius:16px !important;
+}
+
+.about-stat span{
+    font-size:1.8rem !important;
+}
+
+.about-stat small{
+    font-size:.6rem !important;
+}
+
+#about .section-title{
+    font-size:1.6rem !important;
+}
+
+.about-heading .gradient-text{
+    font-size:clamp(1.2rem,5vw,1.8rem) !important;
+}
+
+}

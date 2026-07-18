@@ -4080,3 +4080,19 @@ background-color: #222;
   }
 }
 
+@media (max-width: 900px) {
+  .about-wrapper,
+  .about-intro,
+  .about-philosophy,
+  .philosophy-card,
+  .about-stats,
+  .about-stat,
+  .about-focus,
+  .about-quote,
+  .about-timeline,
+  .timeline-item,
+  .about-ending {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
