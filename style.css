@@ -2139,10 +2139,57 @@ input:checked + .slider .circle{
     }
 
 
-    /* =====================================================
-   PREMIUM ABOUT SECTION V2
-   Matches Portfolio Card System
-===================================================== */
+  [data-theme="light"] .card:hover,
+[data-theme="light"] .project-card:hover,
+[data-theme="light"] .experience-card:hover,
+[data-theme="light"] .accordion-panel:hover,
+[data-theme="light"] .contact-form-wrapper.tilt-active:hover,
+[data-theme="light"] .edu-card:hover,
+[data-theme="light"] .about-stat:hover,
+[data-theme="light"] .philosophy-card:hover{
+  border-color:#6163e6 !important;
+  box-shadow:
+    0 8px 30px rgba(97,99,230,.28),
+    0 0 24px rgba(142,29,187,.18) !important;
+}
 
+[data-theme="light"] .card.tilt-active:hover{
+  border-color:#6163e6 !important;
+  box-shadow:0 0 20px rgba(97,99,230,.25) !important;
+}
+
+[data-theme="light"] .nav-links a:hover{
+  color:#6163e6 !important;
+}
+
+[data-theme="light"] .nav-links a:hover::after{
+  background:#6163e6 !important;
+}
+
+[data-theme="light"] .btn-primary:hover,
+[data-theme="light"] .submit-btn:hover{
+  box-shadow:0 8px 30px rgba(97,99,230,.4) !important;
+}
+
+[data-theme="light"] .tech-orbit:hover{
+  background:linear-gradient(135deg,#6163e6,#8e1dbb) !important;
+  color:#fff !important;
+}
+
+[data-theme="light"] .timeline-year:hover{
+  border-color:#6163e6 !important;
+  box-shadow:0 0 16px rgba(142,29,187,.22) !important;
+}
+
+[data-theme="light"] .acc-panel-verify:hover{
+  background:#8e1dbb !important;
+}
+
+[data-theme="light"] .theme-switch:hover .slider{
+  border-color:#6163e6 !important;
+  box-shadow:
+    inset 0 2px 5px rgba(0,0,0,.12),
+    0 0 16px rgba(97,99,230,.25) !important;
+}
 
  

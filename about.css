@@ -1,3 +1,310 @@
+
+/* =====================================================
+   SIGNATURE REVEAL LOADER
+===================================================== */
+
+#loader{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  overflow:hidden;
+}
+
+.loader-panel{
+  position:absolute;
+  top:0;
+  height:100%;
+  width:50%;
+  transition:transform 1s cubic-bezier(.76,0,.24,1);
+  z-index:1;
+}
+
+.loader-panel-left{ left:0; }
+.loader-panel-right{ right:0; }
+
+.loader-inner{
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  z-index:2;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:26px;
+  transition:opacity .5s ease, transform .5s ease;
+}
+
+.loader-glow{
+  position:absolute;
+  top:36%;
+  left:50%;
+  width:260px;
+  height:260px;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(218,125,145,.16), transparent 70%);
+  filter:blur(34px);
+  animation:loaderGlowBreathe 3.6s ease-in-out infinite;
+  z-index:-1;
+}
+
+.loader-monogram{
+  width:190px;
+  height:auto;
+  overflow:visible;
+}
+
+.loader-monogram-path{
+  font-family:'DM Serif Display', serif;
+  font-style:italic;
+  font-size:64px;
+  fill:var(--accent);
+  fill-opacity:0;
+  stroke:var(--accent);
+  stroke-width:1;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-dasharray:340;
+  stroke-dashoffset:340;
+  animation:
+    loaderMonoDraw 1.6s cubic-bezier(.65,0,.35,1) forwards .2s,
+    loaderMonoFill .8s ease forwards 1.3s;
+}
+
+.loader-name{
+  font-family:'DM Serif Display', serif;
+  font-size:1.7rem;
+  letter-spacing:.5em;
+  padding-left:.5em;
+  color:var(--text);
+  text-transform:uppercase;
+  opacity:0;
+  animation:loaderNameReveal 1s cubic-bezier(.22,1,.36,1) forwards 1.5s;
+}
+
+.loader-line{
+  width:0;
+  height:1px;
+  background:linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity:0;
+  animation:loaderLineExpand .8s ease forwards 2.3s;
+}
+
+.loader-meta{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  opacity:0;
+  animation:loaderMetaFade .6s ease forwards 2.6s;
+}
+.loader-progress-bar{
+  width:220px;
+  height:2px;
+  border-radius:999px;
+  background:rgba(218,125,145,.15);
+  overflow:hidden;
+  opacity:0;
+  animation:loaderMetaFade .6s ease forwards 2.5s;
+}
+
+.loader-progress-fill{
+
+    width:0;
+    height:100%;
+    border-radius:inherit;
+
+    position:relative;
+
+    background:
+    linear-gradient(
+        90deg,
+        #DA7D91,
+        #ffd8e2,
+        #DA7D91
+    );
+
+    background-size:250% 100%;
+
+    animation:progressFlow 2s linear infinite;
+
+    transition:width .03s linear;
+  will-change: width;
+}
+
+.loader-progress-fill::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:-5px;
+    top:50%;
+
+    width:12px;
+    height:12px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    transform:translateY(-50%);
+
+    box-shadow:
+        0 0 8px #fff,
+        0 0 18px #DA7D91,
+        0 0 32px #DA7D91;
+
+}
+
+@keyframes progressFlow{
+
+    from{
+        background-position:0% 50%;
+    }
+
+    to{
+        background-position:250% 50%;
+    }
+
+}
+
+@media (max-width:480px){
+  .loader-progress-bar{ width:160px; }
+}
+
+.loader-percent{
+  font-family:'DM Mono', monospace;
+  font-size:.78rem;
+  letter-spacing:.18em;
+  color:var(--accent);
+  font-variant-numeric:tabular-nums;
+}
+
+.loader-meta-divider{
+  width:1px;
+  height:10px;
+  background:rgba(218,125,145,.4);
+}
+
+.loader-caption{
+  font-family:'DM Mono', monospace;
+  font-size:.62rem;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--paragraph-color);
+  opacity:.75;
+}
+
+/* -----------------------------------------------------
+   EXIT SEQUENCE
+----------------------------------------------------- */
+
+#loader.content-hide .loader-inner{
+  opacity:0;
+  transform:translate(-50%,-50%) translateY(-14px) scale(.97);
+  pointer-events:none;
+}
+
+#loader.curtain-open .loader-panel-left{
+  transform:translateX(-100%);
+}
+
+#loader.curtain-open .loader-panel-right{
+  transform:translateX(100%);
+}
+
+#loader.hidden{
+  visibility:hidden;
+  pointer-events:none;
+}
+.loader-inner{
+  animation:loaderZoomIn 1.2s cubic-bezier(.22,1,.36,1) forwards;
+}
+
+@keyframes loaderZoomIn{
+  from{ transform:translate(-50%,-50%) scale(.85); opacity:0; }
+  to{ transform:translate(-50%,-50%) scale(1); opacity:1; }
+}
+
+#loader.content-hide .loader-inner{
+  animation:loaderZoomOut .5s ease forwards;
+}
+
+@keyframes loaderZoomOut{
+  from{ transform:translate(-50%,-50%) scale(1); opacity:1; }
+  to{ transform:translate(-50%,-50%) scale(1.15); opacity:0; }
+}
+/* -----------------------------------------------------
+   KEYFRAMES
+----------------------------------------------------- */
+
+@keyframes loaderMonoDraw{
+  to{ stroke-dashoffset:0; }
+}
+
+@keyframes loaderMonoFill{
+  to{ fill-opacity:1; }
+}
+
+@keyframes loaderNameReveal{
+  from{ opacity:0; transform:translateY(12px); letter-spacing:.7em; }
+  to{ opacity:1; transform:translateY(0); letter-spacing:.5em; }
+}
+
+@keyframes loaderLineExpand{
+  from{ width:0; opacity:0; }
+  to{ width:70px; opacity:1; }
+}
+
+@keyframes loaderMetaFade{
+  from{ opacity:0; }
+  to{ opacity:1; }
+}
+
+@keyframes loaderGlowBreathe{
+  0%,100%{ opacity:.5; transform:translate(-50%,-50%) scale(1); }
+  50%{ opacity:.9; transform:translate(-50%,-50%) scale(1.08); }
+}
+
+@media (prefers-reduced-motion:reduce){
+
+  .loader-panel{ transition:opacity .5s ease; }
+  #loader.curtain-open .loader-panel-left,
+  #loader.curtain-open .loader-panel-right{
+    transform:none;
+    opacity:0;
+  }
+
+  .loader-monogram-path,
+  .loader-name,
+  .loader-line,
+  .loader-meta,
+  .loader-glow{
+    animation:none !important;
+    opacity:1 !important;
+  }
+
+  .loader-monogram-path{
+    stroke-dashoffset:0 !important;
+    fill-opacity:1 !important;
+  }
+
+  .loader-line{ width:70px !important; }
+
+}
+
+@media (max-width:480px){
+
+  .loader-glow{ width:190px; height:190px; }
+  .loader-monogram{ width:150px; }
+  .loader-monogram-path{ font-size:48px; }
+  .loader-name{ font-size:1.1rem; letter-spacing:.36em; padding-left:.36em; }
+  .loader-caption{ font-size:.54rem; letter-spacing:.26em; }
+
+}
+
+
 /* =====================================================
    PREMIUM ABOUT SECTION V5
    - Portrait (left) + Intro paragraph (right) side-by-side
@@ -3873,7 +4180,7 @@ background-color: #222;
 ----------------------------------------------------- */
 
 @media (max-width:768px){
-
+ 
   .orbit-rotator{
     animation-duration:220s !important;
   }
@@ -4096,3 +4403,436 @@ background-color: #222;
     transform: none !important;
   }
 }
+/* =====================================================
+   EXTRA LOADER FLOURISHES
+===================================================== */
+
+/* Rotating hairline ring behind the monogram */
+.loader-orbit-ring{
+  position:absolute;
+  top:36%;
+  left:50%;
+  width:230px;
+  height:230px;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  border:1px solid rgba(218,125,145,.12);
+  z-index:-1;
+  animation:loaderRingSpin 14s linear infinite;
+}
+
+.loader-orbit-ring::before,
+.loader-orbit-ring::after{
+  content:"";
+  position:absolute;
+  width:4px;
+  height:4px;
+  border-radius:50%;
+  background:var(--accent);
+  box-shadow:0 0 8px rgba(218,125,145,.7);
+}
+
+.loader-orbit-ring::before{ top:-2px; left:50%; transform:translateX(-50%); }
+.loader-orbit-ring::after{ bottom:-2px; left:50%; transform:translateX(-50%); opacity:.5; }
+
+@keyframes loaderRingSpin{
+  from{ transform:translate(-50%,-50%) rotate(0deg); }
+  to{ transform:translate(-50%,-50%) rotate(360deg); }
+}
+
+/* Floating ambient particles */
+.loader-particle{
+  position:absolute;
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:var(--accent);
+  opacity:0.9;
+  animation:loaderParticleFloat 3.5s ease-in-out infinite;
+}
+
+.loader-particle:nth-child(1){ top:20%; left:32%; animation-delay:.2s; }
+.loader-particle:nth-child(2){ top:70%; left:68%; animation-delay:1s; }
+.loader-particle:nth-child(3){ top:60%; left:25%; animation-delay:1.8s; }
+.loader-particle:nth-child(4){ top:15%; left:70%; animation-delay:2.4s; }
+
+@keyframes loaderParticleFloat{
+  0%{ opacity:0; transform:translateY(0) scale(.6); }
+  50%{ opacity:.8; transform:translateY(-18px) scale(1); }
+  100%{ opacity:0; transform:translateY(-36px) scale(.6); }
+}
+
+/* Percentage tick pulse each time it updates */
+.loader-percent{
+  animation:loaderPercentPulse .35s ease;
+}
+
+@keyframes loaderPercentPulse{
+  0%{ transform:scale(1.15); color:#fff; }
+  100%{ transform:scale(1); color:var(--accent); }
+}
+
+/* Caption letter shimmer sweep */
+.loader-caption{
+  position:relative;
+  overflow:hidden;
+}
+
+.loader-caption::after{
+  content:"";
+  position:absolute;
+  top:0; left:-60%;
+  width:40%; height:100%;
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,.35), transparent);
+  animation:loaderCaptionSheen 3s ease-in-out infinite 3s;
+}
+
+@keyframes loaderCaptionSheen{
+  0%{ left:-60%; }
+  60%,100%{ left:120%; }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .loader-orbit-ring,
+  .loader-particle,
+  .loader-caption::after{
+    animation:none !important;
+    opacity:0 !important;
+  }
+}
+
+@media (max-width:480px){
+  .loader-orbit-ring{ width:170px; height:170px; }
+}
+/* =====================================================
+   LIGHT THEME LOADER
+===================================================== */
+
+[data-theme="light"] #loader{
+  background:#fdf6f4;
+}
+
+[data-theme="light"] #loader .loader-panel{
+  background:#fdf6f4;
+}
+
+[data-theme="light"] #loader::before{
+  background:
+    radial-gradient(circle at 50% 35%, rgba(139,76,65,.10), transparent 60%),
+    radial-gradient(ellipse at 50% 100%, rgba(97,99,230,.08), transparent 65%);
+}
+
+[data-theme="light"] #loader::after{
+  background:linear-gradient(115deg, transparent 40%, rgba(142,29,187,.05) 50%, transparent 60%);
+}
+
+[data-theme="light"] .loader-glow{
+  background:radial-gradient(circle, rgba(236,174,159,.55), transparent 70%);
+}
+
+[data-theme="light"] .loader-orbit-ring{
+  border-color:rgba(97,99,230,.18);
+}
+
+[data-theme="light"] .loader-orbit-ring::before,
+[data-theme="light"] .loader-orbit-ring::after{
+  background:#8B4C41;
+  box-shadow:0 0 8px rgba(139,76,65,.5);
+}
+
+[data-theme="light"] .loader-particle{
+  background:#6163e6;
+}
+
+[data-theme="light"] .loader-monogram-path{
+  fill:#8B4C41;
+  stroke:#8B4C41;
+}
+
+[data-theme="light"] .loader-name{
+  color:#8B4C41;
+}
+
+[data-theme="light"] .loader-line{
+  background:linear-gradient(90deg, transparent, #DA7D91, transparent);
+}
+
+[data-theme="light"] .loader-progress-bar{
+  background:rgba(139,76,65,.14);
+}
+
+[data-theme="light"] .loader-progress-fill{
+  background:linear-gradient(90deg, #ecae9fe1, #8e1dbb);
+  box-shadow:0 0 10px rgba(142,29,187,.4);
+}
+
+[data-theme="light"] .loader-percent{
+  color:#8e1dbb;
+}
+
+[data-theme="light"] .loader-percent{
+  animation-name:loaderPercentPulseLight;
+}
+
+@keyframes loaderPercentPulseLight{
+  0%{ transform:scale(1.15); color:#DA7D91; }
+  100%{ transform:scale(1); color:#8e1dbb; }
+}
+
+[data-theme="light"] .loader-meta-divider{
+  background:rgba(97,99,230,.35);
+}
+
+[data-theme="light"] .loader-caption{
+  color:#6163e6;
+}
+
+[data-theme="light"] .loader-caption::after{
+  background:linear-gradient(90deg, transparent, rgba(142,29,187,.35), transparent);
+}
+/* =====================================================
+   ADDITIONAL LOADER ANIMATIONS
+===================================================== */
+
+/* Second, counter-rotating outer ring for depth */
+.loader-orbit-ring-outer{
+  position:absolute;
+  top:36%;
+  left:50%;
+  width:280px;
+  height:280px;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  border:1px dashed rgba(218,125,145,.10);
+  z-index:-1;
+  animation:loaderRingSpinReverse 20s linear infinite;
+}
+
+@keyframes loaderRingSpinReverse{
+  from{ transform:translate(-50%,-50%) rotate(360deg); }
+  to{ transform:translate(-50%,-50%) rotate(0deg); }
+}
+
+[data-theme="light"] .loader-orbit-ring-outer{
+  border-color:rgba(142,29,187,.14);
+}
+
+/* Background mesh drift */
+#loader::before{
+  animation:loaderMeshDrift 9s ease-in-out infinite;
+}
+
+@keyframes loaderMeshDrift{
+  0%,100%{ transform:translate(0,0) scale(1); }
+  50%{ transform:translate(-1.5%,1.5%) scale(1.04); }
+}
+
+/* Monogram idle breathing after it finishes drawing */
+.loader-monogram{
+  animation:loaderMonogramBreathe 3.2s ease-in-out infinite 2.4s;
+  transform-origin:center;
+}
+
+@keyframes loaderMonogramBreathe{
+  0%,100%{ transform:scale(1); }
+  50%{ transform:scale(1.035); }
+}
+
+/* Name letters shimmer once settled */
+.loader-name{
+  background:linear-gradient(90deg, var(--text) 40%, #fff 50%, var(--text) 60%);
+  background-size:250% auto;
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:
+    loaderNameReveal 1s cubic-bezier(.22,1,.36,1) forwards 1.5s,
+    loaderNameShimmer 3.5s ease-in-out infinite 2.8s;
+}
+
+@keyframes loaderNameShimmer{
+  0%{ background-position:200% center; }
+  100%{ background-position:-200% center; }
+}
+
+[data-theme="light"] .loader-name{
+  background:linear-gradient(90deg, #8B4C41 40%, #fff 50%, #8B4C41 60%);
+  background-size:250% auto;
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* Progress bar leading-edge glow dot */
+.loader-progress-bar{
+  position:relative;
+}
+
+.loader-progress-fill::after{
+  content:"";
+  position:absolute;
+  right:0;
+  top:50%;
+  width:6px;
+  height:6px;
+  transform:translate(50%,-50%);
+  border-radius:50%;
+  background:#fff;
+  box-shadow:0 0 10px rgba(255,255,255,.9), 0 0 18px rgba(218,125,145,.7);
+  animation:loaderDotGlow 1.2s ease-in-out infinite;
+}
+
+@keyframes loaderDotGlow{
+  0%,100%{ opacity:.6; }
+  50%{ opacity:1; }
+}
+
+/* Divider pulse */
+.loader-meta-divider{
+  animation:loaderDividerPulse 1.8s ease-in-out infinite 3s;
+}
+
+@keyframes loaderDividerPulse{
+  0%,100%{ opacity:.4; height:10px; }
+  50%{ opacity:1; height:14px; }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .loader-orbit-ring-outer,
+  #loader::before,
+  .loader-monogram,
+  .loader-name,
+  .loader-progress-fill::after,
+  .loader-meta-divider{
+    animation-name:none !important;
+  }
+}
+
+@media (max-width:480px){
+  .loader-orbit-ring-outer{ width:200px; height:200px; }
+}
+/* =====================================================
+   ADDITIONAL LOADER ANIMATIONS V2
+===================================================== */
+
+/* Radiating pulse rings firing outward from the monogram */
+.loader-pulse-ring{
+  position:absolute;
+  top:36%;
+  left:50%;
+  width:150px;
+  height:150px;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  border:1px solid var(--accent);
+  opacity:0;
+  z-index:-1;
+  animation:loaderPulseRing 3s ease-out infinite;
+}
+
+.loader-pulse-ring:nth-child(2){ animation-delay:1s; }
+.loader-pulse-ring:nth-child(3){ animation-delay:2s; }
+
+@keyframes loaderPulseRing{
+  0%{ transform:translate(-50%,-50%) scale(.7); opacity:.5; }
+  100%{ transform:translate(-50%,-50%) scale(1.6); opacity:0; }
+}
+
+[data-theme="light"] .loader-pulse-ring{
+  border-color:#8e1dbb;
+}
+
+/* Cursor-following highlight (subtle parallax) */
+.loader-inner{
+  will-change:transform;
+}
+
+/* Letter-by-letter stagger on the name instead of one block reveal */
+.loader-name{
+  display:inline-flex;
+  font-family:'DM Serif Display', serif;
+  font-size:1.7rem;
+  letter-spacing:.06em;
+  color:var(--text);
+  text-transform:uppercase;
+}
+
+.loader-name-letter{
+  opacity:0;
+  display:inline-block;
+  animation:loaderLetterPop .5s cubic-bezier(.34,1.56,.64,1) forwards;
+}
+
+@keyframes loaderLetterPop{
+  from{ opacity:0; transform:translateY(10px) scale(.8); }
+  to{ opacity:1; transform:translateY(0) scale(1); }
+
+}
+
+/* Percentage counter gets a ticking glow on each digit change */
+.loader-percent{
+  text-shadow:0 0 0 transparent;
+  animation:loaderPercentPulse .35s ease, loaderPercentGlow 1.4s ease-in-out infinite 3s;
+}
+
+@keyframes loaderPercentGlow{
+  0%,100%{ text-shadow:0 0 0 transparent; }
+  50%{ text-shadow:0 0 10px rgba(218,125,145,.6); }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .loader-pulse-ring{ display:none; }
+  .loader-name-letter{ animation:none !important; opacity:1 !important; }
+  .loader-percent{ animation:loaderPercentPulse .35s ease; }
+}
+/* =====================================================
+   LOADER GRADIENT BACKGROUNDS
+===================================================== */
+
+#loader{
+  position:fixed;
+  inset:0;
+}
+
+#loader,
+#loader .loader-panel{
+ background:
+radial-gradient(circle at 20% 20%, rgba(224,128,149,.12), transparent 30%),
+radial-gradient(circle at 80% 30%, rgba(97,99,230,.12), transparent 35%),
+linear-gradient(
+160deg,
+#eca6bb 0%,
+#1b1526 40%,
+#241b33 70%,
+#eca6bb 100%
+);
+  background-size:100vw 100vh;
+  background-attachment:fixed;
+  background-repeat:no-repeat;
+  background-position:0 0;
+}
+
+[data-theme="light"] #loader,
+[data-theme="light"] #loader .loader-panel{
+  background-image:linear-gradient(
+    160deg,
+    #b8aaf5 0%,
+    #f7e6e1 50%,
+    #a874e2 100%
+  );
+}
+/* #loader{
+  background:linear-gradient(160deg, #0e0a0a 0%, #1a1214 45%, #24161a 100%);
+}
+
+#loader .loader-panel{
+  background:linear-gradient(160deg, #0e0a0a 0%, #1a1214 45%, #24161a 100%);
+}
+
+[data-theme="light"] #loader{
+  background:linear-gradient(160deg, #fdf6f4 0%, #f7e6e1 50%, #f0dcd6 100%);
+}
+
+[data-theme="light"] #loader .loader-panel{
+  background:linear-gradient(160deg, #eeb2a1 0%, #f1ccc1 50%, #6163e6 100%);
+} */

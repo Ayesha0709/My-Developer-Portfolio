@@ -1,13 +1,114 @@
- window.addEventListener('load', function () {
-      setTimeout(function () {
-        var l = document.getElementById('loader');
-        if (l) l.classList.add('hidden');
-      }, 400);
+(function () {
+
+    const loader = document.getElementById("loader");
+    const percentEl = document.getElementById("loaderPercent");
+    const fill = document.getElementById("loaderProgressFill");
+
+    if (!loader) return;
+
+    let progress = 0;
+    let loaded = false;
+    let finished = false;
+
+    const minimumDuration = 3000; // 3 seconds
+    const startTime = performance.now();
+
+    function render() {
+        percentEl.textContent = Math.floor(progress);
+        fill.style.width = progress + "%";
+    }
+
+    function animate() {
+
+        if (finished) return;
+
+        const elapsed = performance.now() - startTime;
+
+        // BEFORE PAGE LOAD
+        if (!loaded) {
+
+            if (elapsed < 800) {
+
+                progress += 0.70;
+
+            } else if (elapsed < 1700) {
+
+                progress += 0.35;
+
+            } else if (elapsed < 2600) {
+
+                progress += 0.18;
+
+            } else {
+
+                progress += 0.05;
+
+            }
+
+            progress = Math.min(progress, 95);
+
+        }
+
+        // AFTER PAGE LOAD
+        else {
+
+            progress += (100 - progress) * 0.12;
+
+            if (progress > 99.8)
+                progress = 100;
+
+        }
+
+        render();
+
+        if (progress >= 100) {
+
+            finished = true;
+
+            loader.classList.add("content-hide");
+
+            setTimeout(function () {
+
+                loader.classList.add("curtain-open");
+
+            }, 120);
+
+            setTimeout(function () {
+
+                loader.classList.add("hidden");
+
+            }, 1150);
+
+            return;
+
+        }
+
+        requestAnimationFrame(animate);
+
+    }
+
+    requestAnimationFrame(animate);
+
+    window.addEventListener("load", function () {
+
+        const elapsed = performance.now() - startTime;
+
+        const remaining = Math.max(
+            minimumDuration - elapsed,
+            0
+        );
+
+        setTimeout(function () {
+
+            loaded = true;
+
+        }, remaining);
+
     });
-    setTimeout(function () {
-      var l = document.getElementById('loader');
-      if (l && !l.classList.contains('hidden')) l.classList.add('hidden');
-    }, 4000);
+
+})();
+
+
 
 
     const words = [
@@ -79,6 +180,10 @@
 
       document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
     })();
+
+
+
+    
     const dot = document.getElementById('cursor-dot'); const glowEl = document.getElementById('cursor-glow');
     var mp = { x: -100, y: -100 }, gp = { x: -100, y: -100 };
     window.addEventListener('mousemove', function (e) { mp.x = e.clientX; mp.y = e.clientY; dot.style.left = mp.x + 'px'; dot.style.top = mp.y + 'px'; });
@@ -587,5 +692,15 @@ revealElements.forEach((el) => {
   ------------------------------------------------- */
 
 })();
+
+document.querySelectorAll('.explore-bubble').forEach(function(b){
+  b.addEventListener('touchstart', function(){
+    document.querySelectorAll('.explore-bubble.tapped').forEach(function(x){ x.classList.remove('tapped'); });
+    b.classList.add('tapped');
+  }, { passive:true });
+  b.addEventListener('touchend', function(){
+    setTimeout(function(){ b.classList.remove('tapped'); }, 400);
+  });
+});
 
 
